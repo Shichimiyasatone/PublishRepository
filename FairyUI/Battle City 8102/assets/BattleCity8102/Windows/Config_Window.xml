@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="640,360">
+  <displayList>
+    <component id="n0_ymse" name="frame" src="ymse5" fileName="Component/ConfigFrame.xml" xy="0,0"/>
+  </displayList>
+</component>

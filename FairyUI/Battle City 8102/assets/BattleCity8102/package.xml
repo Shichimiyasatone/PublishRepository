@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="i2flv8js" jpegQuality="80" compressPNG="true">
+  <resources>
+    <component id="ymse0" name="Main_Component.xml" path="/Component/" exported="true"/>
+    <component id="ymse1" name="SelectTank_Component.xml" path="/Component/"/>
+    <component id="ymse2" name="SelectMode_Component.xml" path="/Component/"/>
+    <image id="ymse3" name="cog.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
+    <component id="ymse4" name="Config_Button.xml" path="/Button/"/>
+    <component id="ymse5" name="Config_Frame.xml" path="/Component/"/>
+    <image id="ymse6" name="cancel.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
+    <component id="ymse7" name="Close_Button.xml" path="/Button/"/>
+    <image id="ymse8" name="sound-off.png" path="/Icon/"/>
+    <image id="ymseb" name="double-quaver.png" path="/Icon/"/>
+    <image id="ymsec" name="tank.png" path="/Icon/" scale="" scale9grid="0,127,503,344"/>
+    <component id="ymsef" name="Tanke_Slider_grip.xml" path="/Slider/"/>
+    <component id="ymseg" name="Tanke_Slider.xml" path="/Slider/"/>
+    <component id="ymseh" name="AroundSound_Button.xml" path="/Button/"/>
+    <image id="ymsei" name="speaker.png" path="/Icon/"/>
+    <image id="ymsej" name="speaker-off.png" path="/Icon/"/>
+    <component id="ymsek" name="Sound_Button.xml" path="/Button/"/>
+    <component id="ymsel" name="Config_Window.xml" path="/Windows/" exported="true"/>
+    <image id="ymsem" name="coins.png" path="/Icon/"/>
+    <component id="ymser" name="Rank_Button.xml" path="/Button/"/>
+    <image id="ymses" name="rank1.png" path="/Icon/"/>
+    <image id="ymset" name="rank2.png" path="/Icon/"/>
+    <image id="ymseu" name="rank3.png" path="/Icon/"/>
+    <image id="ymsev" name="rank4.png" path="/Icon/"/>
+    <image id="ymse12" name="experience-background.png" path="/Icon/"/>
+    <component id="ymse14" name="ExperienceBar.xml" path="/ProgressBar/"/>
+    <image id="ymse15" name="red-burron-normal.png" path="/Icon/" scale="9grid" scale9grid="38,8,76,16"/>
+    <component id="ymse17" name="LANBattle_Button.xml" path="/Button/"/>
+    <image id="ymse18" name="LANBattle.png" path="/Icon/"/>
+    <image id="ymse19" name="internetBattle.png" path="/Icon/"/>
+    <component id="ymse1b" name="InternetBattle_Button.xml" path="/Button/"/>
+    <image id="ymse1c" name="right-arrow.png" path="/Icon/"/>
+    <image id="ymse1d" name="left-arrow.png" path="/Icon/"/>
+    <component id="ymse1e" name="SelectLeft_Button.xml" path="/Button/"/>
+    <component id="ymse1f" name="SelectRight_Button.xml" path="/Button/"/>
+    <image id="l8ng1g" name="progress-bar.png" path="/Icon/" scale="9grid" scale9grid="34,5,190,10"/>
+    <component id="jq4p1h" name="RoomList_Component.xml" path="/Component/" exported="true"/>
+    <image id="jq4p1j" name="romm-button.png" path="/Icon/" scale="9grid" scale9grid="17,13,113,5"/>
+    <component id="jq4p1k" name="Room_Button.xml" path="/Button/"/>
+    <image id="jq4p1l" name="entry-door.png" path="/Icon/"/>
+    <image id="jq4p1m" name="house.png" path="/Icon/"/>
+    <component id="jq4p1o" name="CreateRoom_Button.xml" path="/Button/"/>
+    <component id="jq4p1p" name="EntryRomm_Button.xml" path="/Button/"/>
+    <component id="jq4p1q" name="RommInfoFrame.xml" path="/Component/"/>
+    <component id="jq4p1r" name="RoomInfo_Window.xml" path="/Windows/" exported="true"/>
+  </resources>
+  <publish name="BattleCity8102"/>
+</packageDescription>

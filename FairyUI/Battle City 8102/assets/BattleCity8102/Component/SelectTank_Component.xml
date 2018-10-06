@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="640,720">
+  <displayList>
+    <graph id="n4_ymse" name="background" xy="0,0" size="640,720" type="rect" lineSize="0" lineColor="#00000000" fillColor="#ff993333">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <graph id="n5_ymse" name="touchArea" xy="0,110" size="640,450" type="rect" lineColor="#03000000" fillColor="#00ffffff">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <component id="n6_ymse" name="leftButton" src="ymse1e" fileName="Button/SelectLeft_Button.xml" xy="140,580">
+      <relation target="" sidePair="bottom-bottom,left-left"/>
+    </component>
+    <component id="n7_ymse" name="rightButton" src="ymse1f" fileName="Button/SelectRight_Button.xml" xy="460,580">
+      <relation target="" sidePair="bottom-bottom,right-right"/>
+    </component>
+  </displayList>
+</component>
