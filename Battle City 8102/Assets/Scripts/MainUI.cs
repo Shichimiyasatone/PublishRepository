@@ -16,15 +16,16 @@ public class MainUI : MonoBehaviour {
 
     //对应FGUI中的Main,SelectModeComponent,SelectTankComponent
     private GComponent mainComponent;
-    private GComponent selectTankComponent;
+    private GComponent tankViewComponent;
     private GComponent selectModeComponent;
-    private GComponent roomInfoComponent;
+    private GComponent roomListComponent;
 
-    //设置窗口
+    //窗口
     private ConfigWindow configWindow;
     private RoomInfoWindow roomInfoWindow;
+    private TankListWindow tankListWindow;
 
-    //设置列表
+    //列表
     GList roomList;
 
     //经验条
@@ -35,11 +36,13 @@ public class MainUI : MonoBehaviour {
     private GTweener tweener;
 
 
-    //测试经验条和金币
+    //测试经验条、金币
     public int money = 100;
     public int experience = 10;
     //测试房间信息
     public List<Room> rooms;
+    //测试坦克总数
+    public int tankNum = 10;
 
     // Use this for initialization
     void Start () {
@@ -48,11 +51,14 @@ public class MainUI : MonoBehaviour {
 
         //赋值组件
         mainComponent = GetComponent<UIPanel>().ui;
-        selectTankComponent = mainComponent.GetChild("selectTankComponent").asCom;
+        tankViewComponent = mainComponent.GetChild("tankViewComponent").asCom;
         selectModeComponent = mainComponent.GetChild("selectModeComponent").asCom;
-        roomInfoComponent = UIPackage.CreateObject("BattleCity8102","RoomList_Component").asCom;
+        roomListComponent = UIPackage.CreateObject("BattleCity8102","RoomList_Component").asCom;
         //设置钱
         moneyTextField = mainComponent.GetChild("moneyTextField").asTextField;
+        mainComponent.GetChild("configButton").asButton.displayObject.layer = 0;
+        mainComponent.GetChildIndex(mainComponent.GetChild("configButton").asButton);
+
         moneyTextField.text = money.ToString();
         //设置经验
         experienceBar = mainComponent.GetChild("experienceBar").asProgress;
@@ -64,10 +70,34 @@ public class MainUI : MonoBehaviour {
         mainComponent.GetChild("configButton").asButton.onClick.Add(() => {
             configWindow.Show();
         });
-        //对战按钮按下，加载RoomConponent
-        selectModeComponent.GetChild("LANBattleButton").onClick.Add(()=> {
-            BattleButtonOnClick(roomInfoComponent);
+
+        //返回按钮按下，返回主页面
+        mainComponent.GetChild("returnButton").asButton.onClick.Add(() => {
+            //移除房间列表组件，将模式选择组件渲染先于经验条
+            mainComponent.RemoveChild(roomListComponent);
+            mainComponent.AddChild(selectModeComponent);
+            mainComponent.SetChildIndexBefore(selectModeComponent, mainComponent.GetChildIndex(experienceBar));
+
+            mainComponent.GetChild("configButton").asButton.visible = true;
+            mainComponent.GetChild("returnButton").asButton.visible = false;
         });
+
+        //对战按钮按下，加载roomConponent
+        selectModeComponent.GetChild("LANBattleButton").onClick.Add(()=> {
+            //隐藏设置按钮，显示返回按钮
+            mainComponent.GetChild("configButton").asButton.visible = false;
+            mainComponent.GetChild("returnButton").asButton.visible = true;
+
+            BattleButtonOnClick(roomListComponent);
+        });
+
+        //进入房间按钮按下，显示TankListWindow
+        roomListComponent.GetChild("entryRoomButton").asButton.onClick.Add(()=> {
+            
+            tankListWindow = new TankListWindow(tankNum);
+            tankListWindow.Show();
+        }); 
+        
     }
 	
 	// Update is called once per frame
@@ -81,8 +111,8 @@ public class MainUI : MonoBehaviour {
         //设置组件位置
         targetComponent.SetXY(screenX / 2, 0);
         //移除模式选择组件，添加房间列表组件
-        GRoot.inst.RemoveChild(selectModeComponent);
-        GRoot.inst.AddChild(targetComponent);
+        mainComponent.RemoveChild(selectModeComponent);
+        mainComponent.AddChild(targetComponent);
         //注册监听房间按钮，显示房间信息
         roomList = targetComponent.GetChild("roomList").asList;
         roomList.SetVirtual();

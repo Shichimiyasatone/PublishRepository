@@ -26,7 +26,7 @@ public class ConfigWindow : Window {
         //创建窗体
         this.contentPane = UIPackage.CreateObject("BattleCity8102","Config_Window").asCom;
         //设置弹窗位于屏幕中心
-        contentPane.SetXY((MainUI.screenX-contentPane.width)/2,(MainUI.screenY -contentPane.height)/2);
+        //contentPane.SetXY((MainUI.screenX-contentPane.width)/2,(MainUI.screenY -contentPane.height)/2);
         //将窗体中的frame的子赋值给属性
         soundButton = contentPane.GetChild("frame").asCom.GetChild("soundButton").asButton;
         volumeSlider = contentPane.GetChild("frame").asCom.GetChild("volumeSlider").asSlider;

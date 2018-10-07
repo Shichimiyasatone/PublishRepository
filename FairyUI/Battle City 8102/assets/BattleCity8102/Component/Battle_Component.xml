@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <image id="n2_z2si" name="joystickCenter" src="z2si2c" fileName="Icon/joystick-center.png" xy="200,460" size="80,80"/>
+    <component id="n1_z2si" name="joystickButton" src="z2si2f" fileName="Button/JoyStick_Button.xml" xy="160,420" size="160,160"/>
+    <text id="n8_jft1" name="turnXTextField" xy="432,131" size="372,46" fontSize="30" autoSize="none" text="横轴转角："/>
+    <text id="n9_jft1" name="turnYTextField" xy="432,74" size="372,46" fontSize="30" autoSize="none" text="纵轴转角："/>
+    <text id="n4_jft1" name="degreeTextField" xy="815,74" size="372,46" fontSize="30" autoSize="none" text="角度："/>
+    <text id="n5_jft1" name="permTextField" xy="815,131" size="372,39" fontSize="30" autoSize="none" text="前进率："/>
+    <graph id="n6_jft1" name="turnAroundTouchArea" xy="353,0" size="926,720" type="rect" lineSize="0" fillColor="#00ffffff"/>
+    <graph id="n3_z2si" name="stickTouchArea" xy="129,392" size="220,220" type="rect" lineSize="0" fillColor="#00ffffff"/>
+  </displayList>
+</component>

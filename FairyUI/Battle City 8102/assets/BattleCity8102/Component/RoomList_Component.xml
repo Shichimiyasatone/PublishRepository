@@ -23,7 +23,7 @@
     <component id="n3_jq4p" name="createRoomButton" src="jq4p1o" fileName="Button/CreateRoom_Button.xml" xy="40,610">
       <relation target="" sidePair="bottom-bottom"/>
     </component>
-    <component id="n4_jq4p" name="entryRommButton" src="jq4p1p" fileName="Button/EntryRomm_Button.xml" xy="425,610">
+    <component id="n4_jq4p" name="entryRoomButton" src="jq4p1p" fileName="Button/EntryRomm_Button.xml" xy="425,610">
       <relation target="" sidePair="bottom-bottom"/>
     </component>
   </displayList>

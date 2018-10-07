@@ -191,10 +191,14 @@
      <Compile Include="Assets\FairyGUI\Scripts\Utils\XMLList.cs" />
      <Compile Include="Assets\FairyGUI\Scripts\Utils\XMLUtils.cs" />
      <Compile Include="Assets\FairyGUI\Scripts\Utils\ZipReader.cs" />
+     <Compile Include="Assets\Scripts\BattleUI.cs" />
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
+     <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\MainUI.cs" />
      <Compile Include="Assets\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\RoomInfoWindow.cs" />
+     <Compile Include="Assets\Scripts\TankListWindow.cs" />
+     <Compile Include="Assets\Scripts\TurnAround.cs" />
      <None Include="Assets\FairyGUI\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />
      <None Include="Assets\FairyGUI\Resources\Shaders\FairyGUI-Text.shader" />
      <None Include="Assets\FairyGUI\Resources\Shaders\FairyGUI-Text-Brighter.shader" />

@@ -2,12 +2,12 @@
 <packageDescription id="i2flv8js" jpegQuality="80" compressPNG="true">
   <resources>
     <component id="ymse0" name="Main_Component.xml" path="/Component/" exported="true"/>
-    <component id="ymse1" name="SelectTank_Component.xml" path="/Component/"/>
+    <component id="ymse1" name="TankView_Component.xml" path="/Component/" exported="true"/>
     <component id="ymse2" name="SelectMode_Component.xml" path="/Component/"/>
     <image id="ymse3" name="cog.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
     <component id="ymse4" name="Config_Button.xml" path="/Button/"/>
     <component id="ymse5" name="Config_Frame.xml" path="/Component/"/>
-    <image id="ymse6" name="cancel.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
+    <image id="ymse6" name="close.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
     <component id="ymse7" name="Close_Button.xml" path="/Button/"/>
     <image id="ymse8" name="sound-off.png" path="/Icon/"/>
     <image id="ymseb" name="double-quaver.png" path="/Icon/"/>
@@ -46,6 +46,22 @@
     <component id="jq4p1p" name="EntryRomm_Button.xml" path="/Button/"/>
     <component id="jq4p1q" name="RommInfoFrame.xml" path="/Component/"/>
     <component id="jq4p1r" name="RoomInfo_Window.xml" path="/Windows/" exported="true"/>
+    <image id="z2si1s" name="exit-door.png" path="/Icon/"/>
+    <component id="z2si1t" name="Return_Button.xml" path="/Icon/"/>
+    <image id="z2si1u" name="shopping-cart.png" path="/Icon/"/>
+    <component id="z2si1v" name="Shop_Button.xml" path="/Icon/"/>
+    <component id="z2si1w" name="TankList_Frame.xml" path="/Component/"/>
+    <component id="z2si1x" name="TankList_Window.xml" path="/Windows/" exported="true"/>
+    <component id="z2si25" name="Vehicle_Button.xml" path="/Button/"/>
+    <image id="z2si26" name="v0.png" path="/Icon/" exported="true"/>
+    <image id="z2si27" name="tick.png" path="/Icon/"/>
+    <image id="z2si28" name="cancel.png" path="/Icon/"/>
+    <component id="z2si29" name="Cancel_Button.xml" path="/Button/"/>
+    <component id="z2si2a" name="Tick_Button.xml" path="/Button/"/>
+    <image id="z2si2b" name="joystick.png" path="/Icon/"/>
+    <image id="z2si2c" name="joystick-center.png" path="/Icon/"/>
+    <component id="z2si2d" name="Battle_Component.xml" path="/Component/" exported="true"/>
+    <component id="z2si2f" name="JoyStick_Button.xml" path="/Button/"/>
   </resources>
   <publish name="BattleCity8102"/>
 </packageDescription>
