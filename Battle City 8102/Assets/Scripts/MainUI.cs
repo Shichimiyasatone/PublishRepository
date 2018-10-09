@@ -7,6 +7,7 @@ using DG.Tweening;
 /***
  * 房主名长限制在13数字大小内
  * 限制来源于RoomInfoFrame中hostNameTextField的长度
+ * 
  */
 
 public class MainUI : MonoBehaviour {
@@ -92,8 +93,12 @@ public class MainUI : MonoBehaviour {
         });
 
         //进入房间按钮按下，显示TankListWindow
+        roomListComponent.GetChild("entryRoomButton").asButton.enabled = false;//防止不选房间进行点击
         roomListComponent.GetChild("entryRoomButton").asButton.onClick.Add(()=> {
-            
+            if (roomInfoWindow != null)
+            {
+                roomInfoWindow.Dispose();//关闭房间信息窗口
+            }
             tankListWindow = new TankListWindow(tankNum);
             tankListWindow.Show();
         }); 
@@ -129,6 +134,7 @@ public class MainUI : MonoBehaviour {
         GTextField textField = roomButton.GetChild("title").asTextField;
         //点击房间，显示详细信息
         roomButton.onClick.Add(()=> {
+            roomListComponent.GetChild("entryRoomButton").asButton.enabled = true;
             if (roomInfoWindow != null)
             {
                 roomInfoWindow.Dispose();
@@ -140,7 +146,8 @@ public class MainUI : MonoBehaviour {
             //文本域超出显示范围，滚动
             if (textField.width > roomButton.width)
             {//调整文本域的位置，使文本域向左移动
-                tweener = textField.TweenMove(new Vector2(roomList.width - textField.width, 0), 2.0f).OnComplete(() => {
+                tweener = textField.TweenMove(new Vector2(roomList.width - textField.width, 0), 2.0f).OnComplete(() =>
+                {
                     //播放完成后清空tweener，重置位置
                     tweener = null;
                     textField.SetXY(0, 0);
@@ -156,7 +163,7 @@ public class MainUI : MonoBehaviour {
         int roomNum = 20;
         for (int i = 0; i < roomNum; i++)
         {
-            rooms.Add(new Room("求求你们了，相信你们的主播，我tm是真的没有开挂！","卢本伟"+i+"号","绝地海岛","TPP"));
+            rooms.Add(new Room("求求你们了，相信你们的主播，我tm是真的没有开挂！难受啊，马飞！","卢本伟"+i+"号","绝地海岛","TPP"));
         }
     }
 

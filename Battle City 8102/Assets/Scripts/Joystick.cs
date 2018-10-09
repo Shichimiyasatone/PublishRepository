@@ -121,7 +121,7 @@ public class Joystick : EventDispatcher {
             //锚点为左上角，将视觉中点转换成坐标时减去宽高一半
             joystickButton.SetXY(buttonX - joystickButton.width / 2, buttonY - joystickButton.height / 2);
 
-            onMove.Call(new float[]{rad,deltaY});
+            onMove.Call(new float[]{rad,deltaY,deltaX});
         }
     }
 

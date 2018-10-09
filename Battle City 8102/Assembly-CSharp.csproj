@@ -195,6 +195,7 @@
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
      <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\MainUI.cs" />
+     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Room.cs" />
      <Compile Include="Assets\Scripts\RoomInfoWindow.cs" />
      <Compile Include="Assets\Scripts\TankListWindow.cs" />
