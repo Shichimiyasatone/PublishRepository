@@ -192,6 +192,7 @@
      <Compile Include="Assets\FairyGUI\Scripts\Utils\XMLUtils.cs" />
      <Compile Include="Assets\FairyGUI\Scripts\Utils\ZipReader.cs" />
      <Compile Include="Assets\Scripts\BattleUI.cs" />
+     <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
      <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\MainUI.cs" />

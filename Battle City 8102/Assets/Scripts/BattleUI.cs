@@ -86,24 +86,30 @@ public class BattleUI : MonoBehaviour {
 		
 	}
 
-    //数组第一个值为弧度，第二值为直角边长
+    //数组第一个值为弧度，第二值为底边长，第三个值为直角边长
+    //摇杆的坐标轴右侧为X轴正方向，下侧为Y轴正方向
     private void JoystickOnMove(EventContext eventContext)
     {
         float[] data = (float[])eventContext.data;
         float degree = data[0] * 180 / Mathf.PI;
         float percZ;
         //避免除零
-        if (Mathf.Abs(degree)%180==0)
+        if (degree==90||degree ==0||degree == 180)
         {
             percZ = data[2]/joystick.radius;
         }
+        else if (degree == 270)
+        {
+            percZ = -data[2] / joystick.radius;
+        }
         else
         {
-            percZ = data[1] / Mathf.Sin(data[0]) / joystick.radius;
+            percZ = data[1]/Mathf.Sin(degree/180*Mathf.PI) / joystick.radius;
         }  
-        degreeTextField.text = "角度：" + (degree+90);
+        degreeTextField.text = "角度：" + (degree+90);//与transform显示一致
         permTextField.text = "前进率：" +percZ;
-        moveDelegate(degree+90,percZ);
+        //调整角度使得X轴正方向在又，Y正方向在上
+        moveDelegate(-degree,percZ);
     }
 
     private void JoystickOnEnd()
@@ -117,6 +123,7 @@ public class BattleUI : MonoBehaviour {
     //第一个值为横轴转角，第二个值为纵轴转角
     private void TurnAroundOnMove(EventContext eventContext)
     {
+
         float[] data = (float[])eventContext.data;
         turnXTextField.text = "横轴转角："+data[0];
         turnYTextField.text = "纵轴转角："+data[1];
@@ -134,6 +141,7 @@ public class BattleUI : MonoBehaviour {
         lastDegree = data[0];
         battleComponent.GetChild("compassTextField").asTextField.text = "compass:" + lastPercX;
         compassList.scrollPane.SetPercX(lastPercX, false);
+        turnDelegate(data[0],data[1]);
     }
 
     private void TurnAroundOnEnd()
@@ -141,6 +149,8 @@ public class BattleUI : MonoBehaviour {
         turnXTextField.text = "横轴转角：";
         turnYTextField.text = "纵轴转角：";
         lastDegree = 0;
+        //结束
+        turnDelegate(361, 361);
     }
 
     private float perXToDegree(GList list,float itemWidth)

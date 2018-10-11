@@ -5,51 +5,170 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
     private Rigidbody rigidbody;
-    public float speed = 0.3f;
 
-    private float rotation = 0f;
-    private float percZ = 0;
+    private float tankVertical;
+    private float horizontal;
+    public float moveForce = 150f;
+    public float tankRotateSpeed = 60f;
+    public float tankMoveSpeed = 60f;
+    public float turreRotateSpeed = 60f;
+    public float maxSpeed = 10f;
+    private float targetDergee;
+
+    private float deltaTurreDegree =0f;
+    private float initTurreDegree = 0f;
+
+    private float turreRotateY = 0f;
+    private float turreVertical;
+    private float deltaTurreRotateY = 0f;
+
 
     void Awake()
     {
         BattleUI.moveDelegate += Move;
-        BattleUI.turnDelegate += Turn;
+        CameraFollow.cameraRotate += Turn;
     }
 
-    // Use this for initialization
     void Start()
     {
-        this.rigidbody = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
+        initTurreDegree = transform.localEulerAngles.y;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Is Kinematic = false，不移物理控制
-        //rigidbody.rotation = Quaternion.Euler(new Vector3(0,rotation,0));
-        //rigidbody.velocity = transform.forward * speed*percZ;
-
-        //Is  Kinematic = ture,移除物理控制
-        transform.rotation = Quaternion.Euler(new Vector3(0, rotation, 0));
-        transform.Translate(Vector3.forward * speed * percZ);
-
-        //OnTouchEnd速度应该为0；
-    }
-
-    //player朝着给定方向进行移动
-    public void Move(float rotation, float percZ)
-    { 
-        this.percZ = percZ;
-        if (percZ>=361)
+    void FixedUpdate()
+    {                          //返回向量长
+        //if (rigidbody.velocity.magnitude > maxSpeed)
+        //{                                                   //返回长度为1的向量
+        //    rigidbody.velocity = maxSpeed * rigidbody.velocity.normalized;
+        //}
+        
+        if (Mathf.Abs(transform.localEulerAngles.y - targetDergee)<1f)
         {
-            //代表OnTouchEnd
+            tankVertical = 0;
+        }    
+        rigidbody.angularVelocity = Vector3.up * tankVertical *1;
+        rigidbody.velocity = transform.forward * horizontal *10;
+        //var angle = transform.localEulerAngles + rotateSpeed * Time.deltaTime * transform.up*vertical;
+        //rigidbody.MoveRotation(Quaternion.Euler(angle));
+
+        //rigidbody.AddForce(Vector3.forward * horizontal*moveForce);
+
+        
+        if (Mathf.Abs((transform.Find("Main_Turre").transform.localEulerAngles.y + transform.localEulerAngles.y )%360- turreRotateY) < 1f)
+        {
+            Debug.Log("到位了！");
+            turreVertical = 0;
+        }
+        else
+        {
+            deltaTurreRotateY = deltaTurreRotateY + turreVertical;
+        }
+        //炮塔向父对象的反方向进行旋转，模拟不跟随旋转效果
+        transform.Find("Main_Turre").transform.localEulerAngles = Vector3.up * (- transform.localEulerAngles.y+deltaTurreRotateY);
+    }
+
+    private void Move(float tankRotateY,float percZ)
+    {
+        //世界轴
+        // 2 1      
+        // 3 4     
+        //坦克轴
+        // 4 1      1、4象限为前进，2、3象限为后退
+        // 3 2      4、3象限为左转，1、2象限为右转
+        if (tankRotateY >= 361)
+        {
+            horizontal = 0;
+            tankVertical = 0;
             return;
         }
-        this.rotation = rotation;
+        //将角度转换为正角
+        float currentDegree = (transform.localEulerAngles.y + 360) % 360;
+        targetDergee = -tankRotateY + 90+turreRotateY;//修正轴
+        targetDergee = (targetDergee + 360) % 360;
+        percZ = Mathf.Abs(percZ);
+
+        if (currentDegree <= 180 && currentDegree >= 90)
+        {
+            if (targetDergee >= currentDegree - 90 && targetDergee <= currentDegree + 90)
+            {
+                horizontal = percZ;
+            }
+            else
+            {
+
+                targetDergee = (targetDergee + 180) % 360;
+
+                horizontal = -percZ;
+            }
+        }
+        else
+        {
+            if (targetDergee >= (currentDegree + 90) % 360 && targetDergee <= (currentDegree - 90 + 360) % 360)
+            {
+                horizontal = -percZ;
+                targetDergee = (targetDergee + 180) % 360;
+            }
+            else
+            {
+                horizontal = percZ;
+            }
+        }
+
+
+        if (currentDegree <=180)
+        {
+            if (targetDergee>=currentDegree&&targetDergee<=currentDegree+180)
+            {
+                tankVertical = 1;
+            }
+            else
+            {
+                tankVertical = -1;
+            }
+        }
+        else
+        {
+            if (targetDergee>=currentDegree-180&&targetDergee<=currentDegree)
+            {
+                tankVertical = -1;
+            }
+            else
+            {
+                tankVertical = 1;
+            }
+        }
+        
+        
     }
 
-    public void Turn(float turnX, float turnY)
+    private void Turn(float turreRotateY)
     {
+        this.turreRotateY = turreRotateY;
+        float currentDegree = (transform.Find("Main_Turre").localEulerAngles.y -transform.localEulerAngles.y+ 360) % 360;
+        float targetRotate = (turreRotateY + 360) % 360;
 
+        if (currentDegree <= 180)
+        {
+            if (targetRotate >= currentDegree && targetRotate <= currentDegree + 180)
+            {
+                turreVertical = 1;
+            }
+            else
+            {
+                turreVertical = -1;
+            }
+        }
+        else
+        {
+            if (targetRotate >= currentDegree - 180 && targetRotate <= currentDegree)
+            {
+                turreVertical = -1;
+            }
+            else
+            {
+                turreVertical = 1;
+            }
+        }
     }
+
 }

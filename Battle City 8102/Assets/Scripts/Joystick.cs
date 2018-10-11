@@ -101,7 +101,7 @@ public class Joystick : EventDispatcher {
             float deltaY = buttonY + joystickButton.height / 2 - startStageY;
             float rad = Mathf.Atan2(deltaY, deltaX);
             float degree = rad * 180 / Mathf.PI;
-            thumb.rotation = degree + 90;
+            thumb.rotation = degree +90;
 
             //设置范围
             float maxX = radius * Mathf.Cos(rad);
