@@ -11,9 +11,13 @@ using DG.Tweening;
  */
 
 public class MainUI : MonoBehaviour {
+    public static Player player = new Player("wasdTest",4);
 
     public static int screenX = 1280;
     public static int screenY = 720;
+
+    public delegate void DestroyDelegate();
+    public static DestroyDelegate destroyDelegate;
 
     //对应FGUI中的Main,SelectModeComponent,SelectTankComponent
     private GComponent mainComponent;
@@ -25,9 +29,13 @@ public class MainUI : MonoBehaviour {
     private ConfigWindow configWindow;
     private RoomInfoWindow roomInfoWindow;
     private TankListWindow tankListWindow;
+    private CreateRmWindow createRmWindow;
 
     //列表
     GList roomList;
+
+    //选中房间
+    public static Room currentRoom;
 
     //经验条
     public GProgressBar experienceBar;
@@ -41,15 +49,12 @@ public class MainUI : MonoBehaviour {
     public int money = 100;
     public int experience = 10;
     //测试房间信息
-    public List<Room> rooms;
+    public List<Room> rooms = new List<Room>();
     //测试坦克总数
     public int tankNum = 10;
 
     // Use this for initialization
     void Start () {
-        //房间显示测试
-        AddRoom();
-
         //赋值组件
         mainComponent = GetComponent<UIPanel>().ui;
         tankViewComponent = mainComponent.GetChild("tankViewComponent").asCom;
@@ -74,7 +79,13 @@ public class MainUI : MonoBehaviour {
 
         //返回按钮按下，返回主页面
         mainComponent.GetChild("returnButton").asButton.onClick.Add(() => {
-            //移除房间列表组件，将模式选择组件渲染先于经验条
+            //关闭窗口，移除房间列表组件，将模式选择组件渲染先于经验条
+            if (roomInfoWindow!=null)
+            {
+                roomInfoWindow.Dispose();
+            }
+            roomListComponent.GetChild("entryRoomButton").asButton.enabled = false;
+            currentRoom = null;//当前选中房间为空
             mainComponent.RemoveChild(roomListComponent);
             mainComponent.AddChild(selectModeComponent);
             mainComponent.SetChildIndexBefore(selectModeComponent, mainComponent.GetChildIndex(experienceBar));
@@ -101,7 +112,30 @@ public class MainUI : MonoBehaviour {
             }
             tankListWindow = new TankListWindow(tankNum);
             tankListWindow.Show();
-        }); 
+        });
+
+        //创建房间时弹窗，创建完成循环发送房间信息
+        roomListComponent.GetChild("createRoomButton").asButton.onClick.Add(( )=> {
+            MainUI.player.isHost = true;
+            createRmWindow = new CreateRmWindow();
+            createRmWindow.Show();  
+        });
+
+        //刷新时清空当前房间，播放动效，查询房间，重新渲染列表
+        Transition t = roomListComponent.GetTransition("t0");
+        roomListComponent.GetChild("refreshButton").asButton.onClick.Add(() => {
+            currentRoom = null;
+            roomListComponent.GetChild("entryRoomButton").asButton.enabled = false;
+            t.ChangePlayTimes(2);
+            t.Play(()=>{
+                roomListComponent.GetChild("refreshMask").visible = false;
+                roomListComponent.GetChild("refreshTextField").visible = false;
+            });
+            rooms = RoomManager.SearchRoom(rooms);
+            roomList.itemRenderer = RenderListItem;
+            roomList.numItems = rooms.Count;
+        });
+        
         
     }
 	
@@ -113,6 +147,7 @@ public class MainUI : MonoBehaviour {
     //加载房间列表
     private void BattleButtonOnClick(GComponent targetComponent)
     {
+        rooms = RoomManager.SearchRoom(rooms);
         //设置组件位置
         targetComponent.SetXY(screenX / 2, 0);
         //移除模式选择组件，添加房间列表组件
@@ -131,9 +166,14 @@ public class MainUI : MonoBehaviour {
     {
         GButton roomButton = obj.asButton;
         roomButton.title = rooms[index].roomName;
+        if (rooms[index].currentPlayer.Count>= rooms[index].limitNum)
+        {
+            roomButton.enabled = false;
+        }
         GTextField textField = roomButton.GetChild("title").asTextField;
         //点击房间，显示详细信息
         roomButton.onClick.Add(()=> {
+            currentRoom = rooms[index];
             roomListComponent.GetChild("entryRoomButton").asButton.enabled = true;
             if (roomInfoWindow != null)
             {
@@ -154,17 +194,20 @@ public class MainUI : MonoBehaviour {
                 });
             }
         });
-    
     }
 
-    //测试房间列表显示
-    private void AddRoom()
+    //程序结束时释放线程、socket
+    void OnDestroy()
     {
-        int roomNum = 20;
-        for (int i = 0; i < roomNum; i++)
+        try
         {
-            rooms.Add(new Room("求求你们了，相信你们的主播，我tm是真的没有开挂！难受啊，马飞！","卢本伟"+i+"号","绝地海岛","TPP"));
+            destroyDelegate();
         }
+        catch (System.Exception e)
+        {
+            Debug.Log(e.Message);
+        }
+        
     }
 
 }

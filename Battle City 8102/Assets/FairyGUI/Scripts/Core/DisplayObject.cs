@@ -270,8 +270,8 @@ namespace FairyGUI
 		/// </summary>
 		public float y
 		{
-			get { return -cachedTransform.localPosition.y; }
-			set
+            get { return -cachedTransform.localPosition.y; }
+            set
 			{
 				Vector3 v = cachedTransform.localPosition;
 				v.y = -value;

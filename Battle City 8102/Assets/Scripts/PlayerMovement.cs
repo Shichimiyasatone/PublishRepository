@@ -56,7 +56,6 @@ public class PlayerMovement : MonoBehaviour {
         
         if (Mathf.Abs((transform.Find("Main_Turre").transform.localEulerAngles.y + transform.localEulerAngles.y )%360- turreRotateY) < 1f)
         {
-            Debug.Log("到位了！");
             turreVertical = 0;
         }
         else
@@ -144,7 +143,7 @@ public class PlayerMovement : MonoBehaviour {
     private void Turn(float turreRotateY)
     {
         this.turreRotateY = turreRotateY;
-        float currentDegree = (transform.Find("Main_Turre").localEulerAngles.y -transform.localEulerAngles.y+ 360) % 360;
+        float currentDegree = (transform.Find("Main_Turre").localEulerAngles.y +transform.localEulerAngles.y+ 360) % 360;
         float targetRotate = (turreRotateY + 360) % 360;
 
         if (currentDegree <= 180)

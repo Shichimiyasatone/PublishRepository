@@ -26,6 +26,11 @@ public class TankListWindow : Window {
         //添加滚动特效
         tankList.scrollPane.onScroll.Add(DoSpecialEffect);
         DoSpecialEffect();
+        //加入房间
+        contentPane.GetChild("frame").asCom.GetChild("tickButton").onClick.Add(()=>{
+            contentPane.Dispose();
+            new RoomWindow().Show();
+        });
     }
 
     private void RenderListItem(int index,GObject obj)
@@ -39,7 +44,6 @@ public class TankListWindow : Window {
         tankButton.title = icon + index;
         tankButton.onClick.Add(()=> {
             currentTank = tankButton.title;
-            Debug.Log("选中坦克："+tankButton.title);
         });
     }
 

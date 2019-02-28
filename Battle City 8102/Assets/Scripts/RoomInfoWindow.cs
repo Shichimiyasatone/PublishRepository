@@ -48,9 +48,11 @@ public class RoomInfoWindow : Window {
 
         contentPane.SetXY(x,y);
         //对房主、地图、模式进行赋值
+        //地图图片尚未赋值！
         contentPane.GetChild("frame").asCom.GetChild("hostTextField").asTextField.text = room.roomHost;
         contentPane.GetChild("frame").asCom.GetChild("mapTextField").asTextField.text = room.roomMap;
         contentPane.GetChild("frame").asCom.GetChild("modeTextField").asTextField.text = room.roomMode;
+        contentPane.GetChild("frame").asCom.GetChild("playerNumTextField").asTextField.text = room.currentPlayer.Count + "/" + room.limitNum;
         this.onClick.Add(()=> { this.Dispose(); });
     }
 }
