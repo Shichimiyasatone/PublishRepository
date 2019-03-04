@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="380,50" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n0_mhzq" name="background" xy="0,0" size="380,50" touchable="false" type="rect" fillColor="#ff336600">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+    <text id="n5_mhzq" name="title" xy="50,0" size="330,50" fontSize="30" color="#ffffff" vAlign="middle" autoSize="none" text="">
+      <relation target="n6_mhzq" sidePair="left-left"/>
+    </text>
+    <loader id="n6_mhzq" name="icon" xy="0,0" size="50,50">
+      <relation target="" sidePair="left-left,middle-middle"/>
+    </loader>
+    <image id="n7_mhzq" name="readyTag" src="mhzq2z" fileName="Icon/ready-tag.png" xy="330,0" visible="false"/>
+    <image id="n8_mhzq" name="hostTag" src="jq4p1m" fileName="Icon/house.png" xy="330,0" visible="false"/>
+  </displayList>
+  <Button/>
+</component>

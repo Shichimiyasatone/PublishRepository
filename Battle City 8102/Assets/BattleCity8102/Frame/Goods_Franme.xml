@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="285,380">
+  <displayList>
+    <graph id="n1_cfli" name="listBg" xy="0,41" size="285,339" type="rect" lineSize="0" fillColor="#ff3d3d3d"/>
+    <list id="n0_cfli" name="goodsList" xy="0,13" size="285,366" overflow="scroll" margin="30,0,3,3" lineGap="3" defaultItem="ui://i2flv8jsl8el3l" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n5_cfli" name="closeButton" src="l8el3p" fileName="Button/BoxCloseButton.xml" xy="236,0" size="46,46"/>
+    <text id="n6_cfli" name="n6" xy="0,0" size="74,30" fontSize="23" color="#ffffff" text="附近："/>
+    <graph id="n4_cfli" name="dragArea" xy="0,0" size="220,40" visible="false" alpha="0" type="rect"/>
+  </displayList>
+</component>

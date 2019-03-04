@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<component size="175,50" extention="Button">
+<component size="200,50" extention="Button">
   <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
   <displayList>
-    <image id="n0_jq4p" name="background" src="jq4p1j" fileName="Icon/romm-button.png" xy="0,0" size="175,50">
+    <image id="n0_jq4p" name="background" src="jq4p1j" fileName="Icon/romm-button.png" xy="0,0" size="200,50">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <image id="n1_jq4p" name="icon" src="jq4p1l" fileName="Icon/entry-door.png" xy="0,0"/>
-    <text id="n2_jq4p" name="title" xy="50,0" size="125,50" fontSize="28" color="#cc3300" align="center" vAlign="middle" autoSize="none" text="进入房间"/>
+    <text id="n2_jq4p" name="title" xy="25,0" size="175,50" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="进入房间"/>
   </displayList>
   <Button downEffect="dark" downEffectValue="0.80"/>
 </component>

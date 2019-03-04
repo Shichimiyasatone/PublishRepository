@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="475,30" extention="ProgressBar">
+  <displayList>
+    <image id="n3_l8el" name="n3" src="l8el40" fileName="Icon/health-bg.png" xy="0,0" size="475,30" alpha="0.1">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <graph id="n1_l8el" name="bar" xy="0,0" size="475,30" alpha="0.3" type="rect" lineSize="0" fillColor="#ffff6666">
+      <relation target="" sidePair="width-width,height-height"/>
+    </graph>
+  </displayList>
+  <ProgressBar/>
+</component>

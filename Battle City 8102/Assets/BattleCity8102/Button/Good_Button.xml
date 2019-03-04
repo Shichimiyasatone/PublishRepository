@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="280,130" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <graph id="n8_l8el" name="rightBg" xy="100,0" size="180,130" alpha="0.7" type="rect" lineSize="0" fillColor="#ffefc324">
+      <relation target="" sidePair="height-height,width-width"/>
+    </graph>
+    <graph id="n9_l8el" name="leftBg" xy="0,0" size="100,130" type="rect" lineSize="0" fillColor="#ffefc324">
+      <relation target="" sidePair="left-left,height-height"/>
+    </graph>
+    <loader id="n3_l8el" name="icon" xy="0,14" size="100,100" fill="scale">
+      <relation target="" sidePair="left-left,middle-middle"/>
+    </loader>
+    <text id="n4_l8el" name="nameTextField" xy="100,1" size="179,30" fontSize="22" autoSize="height" bold="true" text="7.62毫米子弹">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n5_l8el" name="countTextField" xy="240,103" size="38,27" fontSize="20" align="right" vAlign="middle" text="100">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+    </text>
+    <text id="n7_l8el" name="descriptionTextField" xy="100,31" size="179,21" fontSize="15" autoSize="height" text="步枪、狙击枪使用">
+      <relation target="n4_l8el" sidePair="left-left,top-bottom"/>
+      <relation target="" sidePair="width-width"/>
+    </text>
+    <text id="n10_l8el" name="title" xy="32,58" size="35,19" visible="false" fontSize="12" text="bullet"/>
+    <text id="n11_oe6i" name="coldDownTextField" xy="126,61" size="40,19" visible="false" fontSize="12" text=""/>
+  </displayList>
+  <Button/>
+</component>

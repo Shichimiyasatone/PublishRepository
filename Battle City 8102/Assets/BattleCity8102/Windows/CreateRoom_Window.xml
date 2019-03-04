@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <graph id="n2_yfag" name="maskTop" xy="0,0" size="1280,160" type="rect" lineSize="0" fillColor="#33ffffff"/>
+    <graph id="n3_yfag" name="maskLeft" xy="0,160" size="440,400" type="rect" lineSize="0" fillColor="#33ffffff"/>
+    <graph id="n4_yfag" name="maskRight" xy="840,160" size="440,400" type="rect" lineSize="0" fillColor="#33ffffff"/>
+    <graph id="n5_yfag" name="maskBottom" xy="0,560" size="1280,160" type="rect" lineSize="0" fillColor="#33ffffff"/>
+    <component id="n1_yfag" name="frame" src="yfag3a" fileName="Frame/CreateRoom_Frame.xml" xy="440,160"/>
+  </displayList>
+</component>

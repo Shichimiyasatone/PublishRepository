@@ -31,7 +31,6 @@ public class BattleUI : MonoBehaviour {
     private float initRightPercX = 0f;
     private float initLeftPercX = 0f;
 
-
     // Use this for initialization
     void Start () {
         battleComponent = GetComponent<UIPanel>().ui;
@@ -80,10 +79,10 @@ public class BattleUI : MonoBehaviour {
         lastPercX = initRightPercX;
         compassList.scrollPane.SetPercX(initRightPercX, false);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+    // Update is called once per frame
+    void Update () {
+
 	}
 
     //数组第一个值为弧度，第二值为底边长，第三个值为直角边长

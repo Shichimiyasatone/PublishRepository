@@ -192,12 +192,17 @@
      <Compile Include="Assets\FairyGUI\Scripts\Utils\XMLUtils.cs" />
      <Compile Include="Assets\FairyGUI\Scripts\Utils\ZipReader.cs" />
      <Compile Include="Assets\Scripts\BattleUI.cs" />
+     <Compile Include="Assets\Scripts\Box.cs" />
+     <Compile Include="Assets\Scripts\BoxWindow.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ChatRoom.cs" />
      <Compile Include="Assets\Scripts\ChatRoomClient.cs" />
      <Compile Include="Assets\Scripts\ChatRoomServer.cs" />
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
      <Compile Include="Assets\Scripts\CreateRmWindow.cs" />
+     <Compile Include="Assets\Scripts\Goods.cs" />
+     <Compile Include="Assets\Scripts\GoodsUI.cs" />
+     <Compile Include="Assets\Scripts\GoodsWindow.cs" />
      <Compile Include="Assets\Scripts\IPv4.cs" />
      <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\Loading.cs" />
@@ -208,6 +213,7 @@
      <Compile Include="Assets\Scripts\RoomInfoWindow.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\Scripts\RoomWindow.cs" />
+     <Compile Include="Assets\Scripts\Tank.cs" />
      <Compile Include="Assets\Scripts\TankListWindow.cs" />
      <Compile Include="Assets\Scripts\TurnAround.cs" />
      <None Include="Assets\FairyGUI\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />

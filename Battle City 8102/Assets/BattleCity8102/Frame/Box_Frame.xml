@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="571,380">
+  <displayList>
+    <graph id="n5_l8el" name="frameBg" xy="0,40" size="571,340" alpha="0.7" type="rect" lineSize="0" lineColor="#ff333333" fillColor="#ff333333"/>
+    <graph id="n10_l8el" name="listBg" xy="0,70" size="571,310" type="rect" lineSize="0" fillColor="#ff3d3d3d"/>
+    <list id="n4_l8el" name="boxList" xy="0,40" size="571,340" layout="flow_hz" overflow="scroll" margin="30,0,3,3" lineGap="3" colGap="5" defaultItem="ui://i2flv8jsl8el3l" autoClearItems="true">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <text id="n6_l8el" name="holderNameTextField" xy="0,40" size="116,27" fontSize="20" color="#ffffff" text="ekfjjwejkwek"/>
+    <component id="n8_l8el" name="closeButton" src="l8el3p" fileName="Button/BoxCloseButton.xml" xy="522,16" size="46,46"/>
+    <graph id="n9_l8el" name="dragArea" xy="0,27" size="500,40" alpha="0" type="rect"/>
+    <text id="n11_l8el" name="n11" xy="114,40" size="68,28" alpha="0.3" fontSize="20" color="#ffffff" autoSize="none" bold="true" text="的盒子">
+      <relation target="n6_l8el" sidePair="left-left"/>
+    </text>
+  </displayList>
+</component>

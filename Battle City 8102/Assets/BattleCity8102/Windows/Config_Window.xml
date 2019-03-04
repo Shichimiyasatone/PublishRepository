@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1280,760">
   <displayList>
-    <component id="n0_ymse" name="frame" src="ymse5" fileName="Component/Config_Frame.xml" xy="320,200">
+    <component id="n0_ymse" name="frame" src="ymse5" fileName="Frame/Config_Frame.xml" xy="320,200">
       <relation target="" sidePair="width-width,height-height"/>
     </component>
-    <graph id="n1_z2si" name="maskTop" xy="0,0" size="1280,200" touchable="false" type="rect" lineSize="0" fillColor="#33000000">
+    <graph id="n1_z2si" name="maskTop" xy="0,0" size="1280,200" type="rect" lineSize="0" fillColor="#33000000">
       <relation target="" sidePair="width-width,top-top"/>
     </graph>
-    <graph id="n2_z2si" name="maskLeft" xy="0,200" size="320,360" touchable="false" type="rect" lineSize="0" fillColor="#33000000">
+    <graph id="n2_z2si" name="maskLeft" xy="0,200" size="320,360" type="rect" lineSize="0" fillColor="#33000000">
       <relation target="" sidePair="left-left,height-height"/>
     </graph>
-    <graph id="n3_z2si" name="maskRight" xy="960,200" size="320,360" touchable="false" type="rect" lineSize="0" fillColor="#33000000">
+    <graph id="n3_z2si" name="maskRight" xy="960,200" size="320,360" type="rect" lineSize="0" fillColor="#33000000">
       <relation target="" sidePair="right-right,height-height"/>
     </graph>
-    <graph id="n4_z2si" name="maskBottom" xy="0,560" size="1280,200" touchable="false" type="rect" lineSize="0" fillColor="#33000000">
+    <graph id="n4_z2si" name="maskBottom" xy="0,560" size="1280,200" type="rect" lineSize="0" fillColor="#33000000">
       <relation target="" sidePair="bottom-bottom,width-width"/>
     </graph>
   </displayList>

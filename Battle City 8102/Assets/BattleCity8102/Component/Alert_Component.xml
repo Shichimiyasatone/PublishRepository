@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="420,30" pivot="0.5,0.5" anchor="true">
+  <displayList>
+    <image id="n0_hu8q" name="bg" src="hu8q47" fileName="Icon/alert.png" xy="-76,0" size="572,31" aspect="true"/>
+    <text id="n1_hu8q" name="alertTextField" xy="210,14" pivot="0.5,0.5" anchor="true" size="10,29" fontSize="22" color="#ffffff" align="center" text=""/>
+  </displayList>
+  <transition name="t0">
+    <item time="0" type="Alpha" target="n1_hu8q" tween="true" startValue="0" endValue="1" duration="12"/>
+    <item time="0" type="XY" target="n1_hu8q" tween="true" startValue="210,31" endValue="210,14" duration="12"/>
+    <item time="12" type="XY" target="n1_hu8q" tween="true" startValue="210,14" endValue="210,10" duration="24"/>
+    <item time="36" type="Alpha" target="n0_hu8q" tween="true" startValue="1" endValue="0" duration="12"/>
+    <item time="36" type="Alpha" target="n1_hu8q" tween="true" startValue="1" endValue="0" duration="12"/>
+    <item time="36" type="XY" target="n1_hu8q" tween="true" startValue="210,10" endValue="210,-35" duration="12"/>
+  </transition>
+</component>

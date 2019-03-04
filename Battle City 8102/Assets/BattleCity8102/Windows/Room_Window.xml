@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <component id="n0_mhzq" name="frame" src="mhzq2v" fileName="Frame/Room_Frame.xml" xy="0,0"/>
+  </displayList>
+</component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <component id="n0_vgu0" name="n0" src="vgu03h" fileName="Frame/Settlement_Frame.xml" xy="0,0"/>
+  </displayList>
+</component>

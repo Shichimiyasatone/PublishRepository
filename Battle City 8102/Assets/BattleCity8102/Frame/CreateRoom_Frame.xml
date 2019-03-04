@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="400,400">
+  <displayList>
+    <graph id="n0_yfag" name="background" xy="0,0" size="400,400" type="rect" lineSize="0" fillColor="#33000000"/>
+    <text id="n2_yfag" name="n2" xy="65,100" size="100,40" fontSize="30" color="#ffffff" autoSize="none" text="地图："/>
+    <text id="n3_yfag" name="n3" xy="65,170" size="100,40" fontSize="30" color="#ffffff" autoSize="none" text="模式："/>
+    <component id="n6_yfag" name="mapComboBox" src="pr7v38" fileName="ComboBox/RoomConfig_Combo.xml" xy="200,110">
+      <ComboBox visibleItemCount="2">
+        <item title="激情沙漠" value="激情沙漠" icon="ui://i2flv8jspr7v36"/>
+      </ComboBox>
+    </component>
+    <component id="n7_yfag" name="modeComboBox" src="pr7v38" fileName="ComboBox/RoomConfig_Combo.xml" xy="200,180">
+      <ComboBox visibleItemCount="2">
+        <item title="TPS" value="TPS" icon="ui://i2flv8jspr7v36"/>
+      </ComboBox>
+    </component>
+    <component id="n8_yfag" name="closeButton" src="z2si29" fileName="Button/Cancel_Button.xml" xy="20,310"/>
+    <component id="n9_yfag" name="tickButton" src="z2si2a" fileName="Button/Tick_Button.xml" xy="230,310"/>
+    <text id="n10_yfag" name="n10" xy="65,240" size="100,40" fontSize="30" color="#ffffff" autoSize="none" text="人数："/>
+    <component id="n11_yfag" name="numComboBox" src="pr7v38" fileName="ComboBox/RoomConfig_Combo.xml" xy="200,250">
+      <ComboBox visibleItemCount="3">
+        <item title="2人" value="2" icon="ui://i2flv8jspr7v36"/>
+        <item title="4人" value="4" icon="ui://i2flv8jspr7v36"/>
+        <item title="8人" value="8" icon="ui://i2flv8jspr7v36"/>
+      </ComboBox>
+    </component>
+    <text id="n12_yfag" name="n12" xy="65,30" size="100,40" fontSize="30" color="#ffffff" autoSize="none" text="房名："/>
+    <text id="n13_yfag" name="roomNameTextField" xy="166,30" size="184,39" input="true" prompt="请输入房名" maxLength="16" fontSize="30" color="#ffffff" autoSize="none" text=""/>
+  </displayList>
+</component>

@@ -4,6 +4,5 @@
     <component id="n0_fohu" name="loadingBar" src="fohu2q" fileName="ProgressBar/Loding_Bar.xml" xy="318,620" size="617,29">
       <ProgressBar value="100" max="100"/>
     </component>
-    <component id="n1_fohu" name="loadingButton" src="fohu2r" fileName="Button/Loading_Button.xml" xy="1031,348"/>
   </displayList>
 </component>
