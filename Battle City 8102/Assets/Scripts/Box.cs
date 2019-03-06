@@ -20,50 +20,11 @@ public class Box : MonoBehaviour {
 	// 用于测试，赋初始值
 	void Start () {
         goodsList = new List<Goods>();
-        Goods goods = new Goods();
-        goods.type = "bullet";
-        goods.icon = "762";
-        goods.count = 160;
-        goods.goodsName = "7.62毫米子弹";
-        goods.description = "步枪、狙击枪使用";
-        goods.coldDownTime = 2;
-        goodsList.Add(goods);
-
-        goods = new Goods();
-        goods.type = "medecine";
-        goods.icon = "painKiller";
-        goods.count = 3;
-        goods.goodsName = "止痛药";
-        goods.description = "提升70%能量";
-        goods.coldDownTime = 8;
-        goodsList.Add(goods);
-
-        goods = new Goods();
-        goods.type = "bullet";
-        goods.icon = "762";
-        goods.count = 160;
-        goods.goodsName = "7.62毫米子弹";
-        goods.description = "步枪、狙击枪使用";
-        goods.coldDownTime = 2;
-        goodsList.Add(goods);
-
-        goods = new Goods();
-        goods.type = "bullet";
-        goods.icon = "762";
-        goods.count = 160;
-        goods.goodsName = "7.62毫米子弹";
-        goods.description = "步枪、狙击枪使用";
-        goods.coldDownTime = 2;
-        goodsList.Add(goods);
-
-        goods = new Goods();
-        goods.type = "bullet";
-        goods.icon = "762";
-        goods.count = 160;
-        goods.goodsName = "7.62毫米子弹";
-        goods.description = "步枪、狙击枪使用";
-        goods.coldDownTime = 2;
-        goodsList.Add(goods);
+        Goods goods = new Goods("bullet", "762", 160, "7.62毫米子弹", "步枪、狙击枪使用", 2, TemporarEffect.TestEffect);
+        goods = new Goods("medecine", "painKiller", 3, "止痛药", "提升70%能量", 8, null);
+        goods = new Goods("bullet", "762", 160, "7.62毫米子弹", "步枪、狙击枪使用", 2, null);
+        goods = new Goods("bullet", "762", 160, "7.62毫米子弹", "步枪、狙击枪使用", 2, null);
+        goods = new Goods("bullet", "762", 160, "7.62毫米子弹", "步枪、狙击枪使用", 2, null);
 
         holderName = "卢姥爷";
     }

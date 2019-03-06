@@ -10,7 +10,7 @@ using UnityEngine;
 public class TankAttack : MonoBehaviour {
 
     public GameObject shellPrefab;
-    public float shellSpeed = 50;
+    public float shellSpeed = 5000;
     public AudioClip shotAudio;
     private Transform firePosition;
 
@@ -39,7 +39,7 @@ public class TankAttack : MonoBehaviour {
     {
         GameObject go = GameObject.Instantiate(shellPrefab, firePosition.position, firePosition.rotation) as GameObject;
         go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
-        Debug.Log(go.GetComponent<Rigidbody>().velocity);
+        //Debug.Log(go.GetComponent<Rigidbody>().velocity + "ospeed");
         AudioSource.PlayClipAtPoint(shotAudio, transform.position);
     }
 

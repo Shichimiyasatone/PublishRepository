@@ -18,7 +18,7 @@ public class Shell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        //Debug.Log(gameObject.GetComponent<Rigidbody>().velocity + "speed");
     }
 
     void OnTriggerEnter(Collider collider)
