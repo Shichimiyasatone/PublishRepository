@@ -8,6 +8,10 @@ using UnityEngine;
  */
 public class Box : MonoBehaviour {
 
+    // 定义盒子委托
+    public delegate void BoxDelegate(Box box);
+    public static BoxDelegate boxDelegate;
+
     // 盒子内的物品
     public List<Goods> goodsList;
     // 谁的盒子
@@ -68,4 +72,23 @@ public class Box : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    // 添加可拾取物体
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Tank")
+        {
+            // 调用委托，显示盒子列表
+            boxDelegate(this);
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "Tank")
+        {
+            boxDelegate(null);
+        }
+
+    }
 }

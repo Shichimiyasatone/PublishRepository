@@ -30,4 +30,23 @@ public class Goods  :MonoBehaviour{
         // 移除自身
         Destroy(this.gameObject);
     }
+
+    // 添加可拾取物体
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.tag == "Tank")
+        {
+            collider.SendMessage("addGoods",this);
+            Debug.Log("碰撞物体！");
+        }
+    }
+
+    void OnTriggerExit(Collider collider)
+    {
+        if (collider.tag == "Tank")
+        {
+            collider.SendMessage("removeGoods", this);
+            Debug.Log("远离物体！");
+        }
+    }
 }

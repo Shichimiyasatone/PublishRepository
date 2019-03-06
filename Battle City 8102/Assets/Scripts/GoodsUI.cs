@@ -64,7 +64,7 @@ public class GoodsUI : MonoBehaviour {
         });
 
         // 坦克将碰撞到的盒子传递过来，通过判断盒子是否为空表示远离或接近
-        Tank.boxDelegate += (Box box) => {
+        Box.boxDelegate += (Box box) => {
             boxButton.visible = box == null ? false : true;
             // 远离盒子时关闭窗口
             if (!boxButton.visible && boxWindow != null)

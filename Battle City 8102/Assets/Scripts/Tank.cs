@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Tank : MonoBehaviour {
 
-    // 定义盒子、物品列表委托
-    public delegate void BoxDelegate(Box box);
+    // 定义物品列表委托
     public delegate void GoodsDelegate(List<Goods> goodsList);
 
-    public static BoxDelegate boxDelegate;
     public static GoodsDelegate goodsDelegate;
 
     // 用于统计附近道具
@@ -24,57 +22,33 @@ public class Tank : MonoBehaviour {
 		
 	}
 
-    // 添加可拾取物体
-    void OnTriggerEnter(Collider collider)
+    void addGoods(Goods goods)
     {
-        if (collider.tag == "Goods")
+        if (goods == null)
         {
-            Goods goods = collider.gameObject.GetComponent<Goods>();
-            // 防止空指针
-            if (goods == null)
-            {
-                return;
-            }
-            if (!goodsList.Contains(goods))
-            {
-                Debug.Log("添加"+goods.goodsName + "X"+goods.count);
-                goodsList.Add(goods);
-            }
-            // 调用委托，显示物品列表
-            goodsDelegate(goodsList);
-        }else if (collider.tag == "Box")
-        {
-            Box box = collider.gameObject.GetComponent<Box>();
-            if (box == null)
-            {
-                return;
-            }
-            // 调用委托，显示盒子列表
-            boxDelegate(box);
+            return;
         }
+        if (!goodsList.Contains(goods))
+        {
+            goodsList.Add(goods);
+        }
+        // 调用委托，显示物品列表
+        goodsDelegate(goodsList);
     }
 
-    void OnTriggerExit(Collider collider)
+    void removeGoods(Goods goods)
     {
-        if (collider.tag == "Goods")
+        // 防止空指针
+        if (goods == null)
         {
-            Goods goods = collider.gameObject.GetComponent<Goods>();
-            // 防止空指针
-            if (goods == null)
-            {
-                return;
-            }
-            if (goodsList.Contains(goods))
-            {
-                Debug.Log("移除" + goods.goodsName + "X" + goods.count);
-                goodsList.Remove(goods);
-            }
-            // 更新物品列表
-            goodsDelegate(goodsList);
+            return;
         }
-        else if (collider.tag =="Box")
+        if (goodsList.Contains(goods))
         {
-            boxDelegate(null);
+            goodsList.Remove(goods);
         }
+        // 更新物品列表
+        goodsDelegate(goodsList);
     }
+
 }

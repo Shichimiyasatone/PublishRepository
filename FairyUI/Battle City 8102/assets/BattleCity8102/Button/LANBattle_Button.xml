@@ -6,7 +6,7 @@
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <image id="n1_ymse" name="icon" src="ymse18" fileName="Icon/LANBattle.png" xy="10,0"/>
-    <text id="n2_ymse" name="title" xy="65,5" size="200,40" fontSize="30" color="#6666cc" align="center" vAlign="middle" autoSize="none" text="局域网对战"/>
+    <text id="n2_ymse" name="title" xy="65,5" size="200,40" fontSize="30" color="#ffffff" align="center" vAlign="middle" autoSize="none" text="局域网对战"/>
   </displayList>
   <Button downEffect="scale" downEffectValue="0.80"/>
 </component>

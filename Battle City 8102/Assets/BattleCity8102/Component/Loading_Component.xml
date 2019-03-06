@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<component size="1280,720">
-  <displayList>
-    <component id="n0_fohu" name="loadingBar" src="fohu2q" fileName="ProgressBar/Loding_Bar.xml" xy="318,620" size="617,29">
-      <ProgressBar value="100" max="100"/>
-    </component>
-  </displayList>
-</component>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<component size="35,35" extention="Button">
-  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
-  <displayList>
-    <image id="n0_ymse" name="tank" src="ymsec" fileName="Icon/tank.png" xy="0,0" size="50,50" fillMethod="vt" fillOrigin="1"/>
-  </displayList>
-  <Button/>
-</component>

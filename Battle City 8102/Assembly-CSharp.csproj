@@ -213,7 +213,10 @@
      <Compile Include="Assets\Scripts\RoomInfoWindow.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\Scripts\RoomWindow.cs" />
+     <Compile Include="Assets\Scripts\Shell.cs" />
      <Compile Include="Assets\Scripts\Tank.cs" />
+     <Compile Include="Assets\Scripts\TankAttack.cs" />
+     <Compile Include="Assets\Scripts\TankHealth.cs" />
      <Compile Include="Assets\Scripts\TankListWindow.cs" />
      <Compile Include="Assets\Scripts\TurnAround.cs" />
      <None Include="Assets\FairyGUI\Resources\Shaders\AddOn\FairyGUI-BlurFilter.shader" />

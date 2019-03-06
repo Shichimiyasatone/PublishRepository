@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1280,720">
+  <displayList>
+    <image id="n26_tzyk" name="background" src="tzyk4c" fileName="Wallpaper/Room_Picture.png" xy="0,0" size="1280,720" aspect="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <graph id="n8_mhzq" name="playerListBackground" xy="460,30" size="800,400" group="n19_mhzq" type="rect" fillColor="#33ffffff"/>
+    <graph id="n9_mhzq" name="messageBackground" xy="460,430" size="800,250" group="n19_mhzq" type="rect" fillColor="#33ffffff"/>
+    <graph id="n22_zajs" name="playerBackground" xy="471,38" size="780,330" group="n19_mhzq" type="rect" fillColor="#4d000000"/>
+    <graph id="n14_mhzq" name="inputBackground" xy="460,630" size="800,50" group="n19_mhzq" type="rect" fillColor="#4dffffff"/>
+    <text id="n11_mhzq" name="inputTextField" xy="460,630" size="700,50" group="n19_mhzq" input="true" prompt="输入消息..." fontSize="30" vAlign="middle" autoSize="none" singleLine="true" text=""/>
+    <component id="n13_mhzq" name="sendMessageButton" src="mhzq2w" fileName="Button/SendMessage_Button.xml" xy="1160,630" size="99,49" group="n19_mhzq"/>
+    <component id="n17_mhzq" name="readyButton" src="mhzq2x" fileName="Button/Ready_Button.xml" xy="1104,372" group="n19_mhzq"/>
+    <list id="n18_mhzq" name="playerList" xy="471,38" size="780,330" group="n19_mhzq" layout="flow_hz" overflow="scroll" margin="0,0,10,0" lineGap="1" colGap="2" defaultItem="ui://i2flv8jsmhzq2y">
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+      <item/>
+    </list>
+    <component id="n23_tv0v" name="startButton" src="tv0v32" fileName="Button/Start_Button.xml" xy="1104,372" group="n19_mhzq"/>
+    <list id="n25_lrt3" name="messageList" xy="460,430" size="800,200" group="n19_mhzq" overflow="scroll" defaultItem="ui://i2flv8jslrt33g" autoClearItems="true">
+      <item title="546456"/>
+      <item/>
+    </list>
+    <group id="n19_mhzq" name="rightGroup" xy="460,30" size="800,650" advanced="true">
+      <relation target="" sidePair="right-right"/>
+    </group>
+    <component id="n6_mhzq" name="roomInfoFrame" src="jq4p1q" fileName="Frame/RommInfo_Frame.xml" xy="40,30" group="n20_mhzq"/>
+    <graph id="n7_mhzq" name="friendsFrame" xy="40,431" size="400,251" group="n20_mhzq" type="rect" fillColor="#33ffffff"/>
+    <component id="n24_tv0v" name="roomConfigComponent" src="tv0v33" fileName="Component/RoomConfig_Component.xml" xy="40,30" group="n20_mhzq" visible="false"/>
+    <group id="n20_mhzq" name="leftGroup" xy="40,30" size="400,652" advanced="true">
+      <relation target="" sidePair="left-left"/>
+    </group>
+    <component id="n15_mhzq" name="closeButton" src="z2si1t" fileName="Button/Return_Button.xml" xy="20,20">
+      <relation target="" sidePair="left-left,top-top"/>
+    </component>
+  </displayList>
+</component>

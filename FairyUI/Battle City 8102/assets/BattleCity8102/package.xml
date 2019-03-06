@@ -6,7 +6,7 @@
     <component id="ymse2" name="SelectMode_Component.xml" path="/Component/"/>
     <image id="ymse3" name="cog.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
     <component id="ymse4" name="Config_Button.xml" path="/Button/"/>
-    <component id="ymse5" name="Config_Frame.xml" path="/Component/"/>
+    <component id="ymse5" name="Config_Frame.xml" path="/Frame/"/>
     <image id="ymse6" name="close.png" path="/Icon/" scale="" scale9grid="0,0,462,462"/>
     <component id="ymse7" name="Close_Button.xml" path="/Button/"/>
     <image id="ymse8" name="sound-off.png" path="/Icon/"/>
@@ -21,10 +21,10 @@
     <component id="ymsel" name="Config_Window.xml" path="/Windows/" exported="true"/>
     <image id="ymsem" name="coins.png" path="/Icon/"/>
     <component id="ymser" name="Rank_Button.xml" path="/Button/"/>
-    <image id="ymses" name="rank1.png" path="/Icon/"/>
-    <image id="ymset" name="rank2.png" path="/Icon/"/>
-    <image id="ymseu" name="rank3.png" path="/Icon/"/>
-    <image id="ymsev" name="rank4.png" path="/Icon/"/>
+    <image id="ymses" name="rank1.png" path="/Icon/" exported="true"/>
+    <image id="ymset" name="rank2.png" path="/Icon/" exported="true"/>
+    <image id="ymseu" name="rank3.png" path="/Icon/" exported="true"/>
+    <image id="ymsev" name="rank4.png" path="/Icon/" exported="true"/>
     <image id="ymse12" name="experience-background.png" path="/Icon/"/>
     <component id="ymse14" name="ExperienceBar.xml" path="/ProgressBar/"/>
     <image id="ymse15" name="red-burron-normal.png" path="/Icon/" scale="9grid" scale9grid="38,8,76,16"/>
@@ -44,13 +44,13 @@
     <image id="jq4p1m" name="house.png" path="/Icon/"/>
     <component id="jq4p1o" name="CreateRoom_Button.xml" path="/Button/"/>
     <component id="jq4p1p" name="EntryRomm_Button.xml" path="/Button/"/>
-    <component id="jq4p1q" name="RommInfoFrame.xml" path="/Component/"/>
+    <component id="jq4p1q" name="RommInfo_Frame.xml" path="/Frame/"/>
     <component id="jq4p1r" name="RoomInfo_Window.xml" path="/Windows/" exported="true"/>
     <image id="z2si1s" name="exit-door.png" path="/Icon/"/>
-    <component id="z2si1t" name="Return_Button.xml" path="/Icon/"/>
+    <component id="z2si1t" name="Return_Button.xml" path="/Button/"/>
     <image id="z2si1u" name="shopping-cart.png" path="/Icon/"/>
-    <component id="z2si1v" name="Shop_Button.xml" path="/Icon/"/>
-    <component id="z2si1w" name="TankList_Frame.xml" path="/Component/"/>
+    <component id="z2si1v" name="Shop_Button.xml" path="/Button/"/>
+    <component id="z2si1w" name="TankList_Frame.xml" path="/Frame/"/>
     <component id="z2si1x" name="TankList_Window.xml" path="/Windows/" exported="true"/>
     <component id="z2si25" name="Vehicle_Button.xml" path="/Button/"/>
     <image id="z2si26" name="v0.png" path="/Icon/" exported="true"/>
@@ -62,6 +62,63 @@
     <image id="z2si2c" name="joystick-center.png" path="/Icon/"/>
     <component id="z2si2d" name="Battle_Component.xml" path="/Component/" exported="true"/>
     <component id="z2si2f" name="JoyStick_Button.xml" path="/Button/"/>
+    <image id="w8la2g" name="green.png" path="/Icon/"/>
+    <image id="w8la2h" name="purple.png" path="/Icon/"/>
+    <image id="w8la2i" name="red.png" path="/Icon/"/>
+    <image id="w8la2j" name="white.png" path="/Icon/"/>
+    <component id="w8la2k" name="compassButton.xml" path="/Button/"/>
+    <image id="rkvm2l" name="crosshair.png" path="/Icon/"/>
+    <image id="rkvm2o" name="cannon-shot.png" path="/Icon/"/>
+    <component id="fohu2p" name="Loading_Component.xml" path="/Component/" exported="true"/>
+    <component id="fohu2q" name="Loding_Bar.xml" path="/ProgressBar/"/>
+    <image id="mhzq2s" name="fire-background.png" path="/Icon/"/>
+    <component id="mhzq2t" name="Fire_Button.xml" path="/Button/"/>
+    <component id="mhzq2u" name="Aim_Button.xml" path="/Button/"/>
+    <component id="mhzq2v" name="Room_Frame.xml" path="/Frame/"/>
+    <component id="mhzq2w" name="SendMessage_Button.xml" path="/Button/"/>
+    <component id="mhzq2x" name="Ready_Button.xml" path="/Button/"/>
+    <component id="mhzq2y" name="Player_Button.xml" path="/Button/"/>
+    <image id="mhzq2z" name="ready-tag.png" path="/Icon/"/>
+    <component id="mhzq30" name="Room_Window.xml" path="/Windows/" exported="true"/>
+    <component id="lutm31" name="Refresh_Button.xml" path="/Button/"/>
+    <component id="tv0v32" name="Start_Button.xml" path="/Button/"/>
+    <component id="tv0v33" name="RoomConfig_Component.xml" path="/Component/"/>
+    <image id="pr7v34" name="black-arrow.png" path="/Icon/"/>
+    <image id="pr7v35" name="blue-arrow.png" path="/Icon/"/>
+    <component id="pr7v36" name="RoomConfig_Combo_item.xml" path="/ComboBox/"/>
+    <component id="pr7v37" name="RoomConfig_Combo_popup.xml" path="/ComboBox/"/>
+    <component id="pr7v38" name="RoomConfig_Combo.xml" path="/ComboBox/"/>
+    <component id="yfag3a" name="CreateRoom_Frame.xml" path="/Frame/"/>
+    <component id="yfag3b" name="CreateRoom_Window.xml" path="/Windows/" exported="true"/>
+    <component id="lrt33g" name="Message_Button.xml" path="/Button/"/>
+    <component id="vgu03h" name="Settlement_Frame.xml" path="/Frame/"/>
+    <component id="vgu03i" name="Settlement_Button.xml" path="/Button/"/>
+    <component id="vgu03j" name="Settlement_Window.xml" path="/Windows/" exported="true"/>
+    <component id="l8el3k" name="Box_Frame.xml" path="/Frame/"/>
+    <component id="l8el3l" name="Good_Button.xml" path="/Button/"/>
+    <component id="l8el3m" name="Box_Window.xml" path="/Windows/" exported="true"/>
+    <image id="l8el3n" name="closeBox.png" path="/Icon/"/>
+    <component id="l8el3p" name="BoxCloseButton.xml" path="/Button/"/>
+    <image id="l8el3q" name="box.png" path="/Icon/"/>
+    <image id="l8el3r" name="opened-box.png" path="/Icon/"/>
+    <component id="l8el3s" name="BoxButton.xml" path="/Button/"/>
+    <component id="l8el3t" name="Good_Footer_Mul_Button.xml" path="/Button/"/>
+    <image id="l8el3v" name="selected.png" path="/Icon/"/>
+    <image id="l8el3w" name="goods-762.png" path="/Icon/" exported="true"/>
+    <image id="l8el3x" name="bullet-list.png" path="/Icon/" scale="9grid" scale9grid="41,39,21,20"/>
+    <component id="l8el3y" name="Health_Bar.xml" path="/ProgressBar/"/>
+    <image id="l8el40" name="health-bg.png" path="/Icon/"/>
+    <component id="l8el42" name="Good_Footer_Sin_Button.xml" path="/Button/"/>
+    <image id="l8el43" name="goods-painKiller.png" path="/Icon/" exported="true"/>
+    <component id="cfli44" name="Goods_Franme.xml" path="/Frame/"/>
+    <component id="cfli45" name="Goods_Window.xml" path="/Windows/" exported="true"/>
+    <image id="oe6i46" name="coldDownMask.png" path="/Icon/"/>
+    <image id="hu8q47" name="alert.png" path="/Icon/"/>
+    <component id="hu8q48" name="Alert_Component.xml" path="/Component/" exported="true"/>
+    <image id="tzyk49" name="Loding_1_Picture.png" path="/Wallpaper/"/>
+    <image id="tzyk4a" name="Desert_Map_Picture.png" path="/Wallpaper/"/>
+    <image id="tzyk4b" name="Loding_2_Picture.png" path="/Wallpaper/"/>
+    <image id="tzyk4c" name="Room_Picture.png" path="/Wallpaper/"/>
   </resources>
   <publish name="BattleCity8102"/>
 </packageDescription>

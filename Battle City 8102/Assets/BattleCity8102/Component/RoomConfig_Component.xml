@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<component size="400,400">
-  <displayList>
-    <graph id="n2_tv0v" name="background" xy="0,0" size="400,400" type="rect" fillColor="#4d000000"/>
-    <loader id="n0_tv0v" name="icon" xy="40,40" size="320,160"/>
-  </displayList>
-</component>
