@@ -47,13 +47,14 @@ public class PlayerMovement : MonoBehaviour {
             tankVertical = 0;
         }    
         rigidbody.angularVelocity = Vector3.up * tankVertical *1;
-        rigidbody.velocity = transform.forward * horizontal *10;
+        //rigidbody.velocity = transform.forward * horizontal *10;
+        rigidbody.velocity = new Vector3(transform.forward.x * horizontal * 10, rigidbody.velocity.y, transform.forward.z * horizontal * 10);
         //var angle = transform.localEulerAngles + rotateSpeed * Time.deltaTime * transform.up*vertical;
         //rigidbody.MoveRotation(Quaternion.Euler(angle));
 
         //rigidbody.AddForce(Vector3.forward * horizontal*moveForce);
 
-        
+
         if (Mathf.Abs((transform.Find("Main_Turre").transform.localEulerAngles.y + transform.localEulerAngles.y )%360- turreRotateY) < 1f)
         {
             turreVertical = 0;
