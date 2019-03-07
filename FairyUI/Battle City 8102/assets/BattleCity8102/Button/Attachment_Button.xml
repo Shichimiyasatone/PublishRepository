@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="80,80" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <loader id="n4_nq64" name="icon" xy="0,0" size="80,80"/>
+    <image id="n3_nq64" name="n3" src="l8el3x" fileName="Icon/bullet-list.png" xy="-2,-2" size="84,84" aspect="true"/>
+    <text id="n5_cxry" name="countTextField" xy="102,57" size="42,21" visible="false" fontSize="15" align="right" autoSize="none" text="">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+    </text>
+    <text id="n6_cxry" name="descriptionTextField" xy="23,31" size="179,21" visible="false" fontSize="15" autoSize="height" text="">
+      <relation target="" sidePair="width-width"/>
+    </text>
+    <text id="n7_cxry" name="nameTextField" xy="-108,17" size="179,30" visible="false" fontSize="22" autoSize="height" bold="true" text="">
+      <relation target="" sidePair="width-width,top-top"/>
+    </text>
+    <text id="n8_cxry" name="coldDownTextField" xy="70,10" size="40,19" visible="false" fontSize="12" text=""/>
+    <text id="n9_cxry" name="title" xy="41,27" size="10,27" visible="false" fontSize="20" color="#ffffff" text=""/>
+  </displayList>
+  <Button/>
+</component>

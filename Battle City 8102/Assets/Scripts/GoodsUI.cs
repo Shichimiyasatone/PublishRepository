@@ -12,9 +12,14 @@ public class GoodsUI : MonoBehaviour {
     // 拾取事件代理
     public delegate bool GetGoodsDelegate(Goods goods);
     public delegate void DropGoodsDelegate(Goods goods);
+    // 使用、卸载物体的代理
+    public delegate bool DoGoodsDelegate(string goodsName);
+    public delegate bool UndoGoodsDelegate(string goodsName);
 
     public static GetGoodsDelegate getGoodsDelegate;
     public static DropGoodsDelegate dropGoodsDelegate;
+    public static DoGoodsDelegate doGoodsDelegate;
+    public static UndoGoodsDelegate undoGoodsDelegate;
 
     private GComponent battleComponent;
 
@@ -26,6 +31,7 @@ public class GoodsUI : MonoBehaviour {
 
     public BoxWindow boxWindow;
     private GoodsWindow goodsWindow;
+    private BackpackWindow backpackWindow;
 
     // 拖拽替身
     private GLoader dragIcon;
@@ -91,8 +97,8 @@ public class GoodsUI : MonoBehaviour {
 
         // 注册拖拽事件
         GGroup footer = battleComponent.GetChild("footer").asGroup;
-        mulGoodsList = battleComponent.GetChildInGroup(footer, "buttleList").asList;
-        sinGoodsList = battleComponent.GetChildInGroup(footer, "goodsList").asList;
+        mulGoodsList = battleComponent.GetChildInGroup(footer, "bulletList").asList;
+        sinGoodsList = battleComponent.GetChildInGroup(footer, "medecineList").asList;
         GObject[] mulGoodsButtons = mulGoodsList.GetChildren();
         GObject[] sinGoodsButtons = sinGoodsList.GetChildren();
         getGoodsDelegate += getGoods;
@@ -125,6 +131,11 @@ public class GoodsUI : MonoBehaviour {
         bulletColdDownTime = 0;
         medecineColdDownTime = 0;
 
+        GButton backpackButton = battleComponent.GetChild("backpackButton").asButton;
+        backpackButton.onClick.Add(()=> {
+            backpackWindow = new BackpackWindow();
+            backpackWindow.Show();
+        });
     }
 	
 	void Update () {
@@ -182,7 +193,26 @@ public class GoodsUI : MonoBehaviour {
 
     private bool getGoods(Goods goods)
     {
-        GList goodsList = goods.type == "bullet" ? mulGoodsList : sinGoodsList;
+        // 将Backpack.getAttachment()在此调用
+        // 变更footer中UI名字，bulletList、medecineList
+        // 效仿配件的获取，将type与UI的名字统一，减少不必要的判断
+        // 投掷物一同放入medecine
+        string type = goods.type == "throws" ? "medecine" : goods.type;
+        if (type!= "medecine"&&type!="bullet")
+        {
+            // TODO
+            // 调用另一个委托，将物品拾取到BackpackWindow实例化时读取的table中
+            // table在add物品时需要判断是否存在该类配件，如果为覆盖需要undo
+            doGoodsDelegate(goods.name);
+            // 如果窗口为打开状态，更新UI
+            if (backpackWindow!=null)
+            {
+                backpackWindow.getAttachment(goods);
+            }
+            return true;
+        }
+        Debug.Log("goods.type = "+type);
+        GList goodsList = battleComponent.GetChild(type + "List").asList;
         GObject[] goodsButton = goodsList.GetChildren();
         foreach (GObject obj in goodsButton)
         {
@@ -362,15 +392,26 @@ public class GoodsUI : MonoBehaviour {
         if (coldDownTime > totleTime)
         {
             Debug.Log("冷却完毕");
-            int count = int.Parse(btn.GetChild("countTextField").asTextField.text);
-            btn.GetChild("countTextField").asTextField.text = --count + "";
-            btn.GetChild("mask").asImage.visible = false;
-            // 消耗完毕，清除物品
-            if (count == 0)
+            // 子弹不在冷却后消耗，冷却为切换弹种
+            // 消耗品在冷却后数量减少
+            if (btn.title == "medecine")
             {
-                List<GButton> emptyList = btn.title == "bullet" ? bulletEmptyList : medecineEmptyList;
-                emptyList.Add(btn);
-                btn.visible = false;
+                int count = int.Parse(btn.GetChild("countTextField").asTextField.text);
+                btn.GetChild("countTextField").asTextField.text = --count + "";
+                // 消耗完毕，清除物品
+                if (count == 0)
+                {
+                    List<GButton> emptyList = btn.title == "bullet" ? bulletEmptyList : medecineEmptyList;
+                    emptyList.Add(btn);
+                    btn.visible = false;
+                }
+            }
+            btn.GetChild("mask").asImage.visible = false;
+            // 调用委托，传入完成冷却的物品
+            // 无监听注册时产生空指针，text有值
+            if (doGoodsDelegate!=null)
+            {
+                doGoodsDelegate(btn.GetChild("nameTextField").asTextField.text);
             }
             // 无法在遍历时删除table元素，会发生快速失败
             return btn.title;

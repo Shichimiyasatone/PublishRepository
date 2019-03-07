@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="600,500">
+  <displayList>
+    <graph id="n10_nq64" name="bg" xy="0,0" size="600,500" alpha="0.7" type="rect" fillColor="#ff000000"/>
+    <graph id="n0_nq64" name="playerImage" xy="50,50" size="500,400" type="rect" lineSize="0"/>
+    <component id="n6_nq64" name="closeButton" src="l8el3p" fileName="Button/BoxCloseButton.xml" xy="-13,-2" size="58,58" aspect="true"/>
+    <graph id="n7_nq64" name="dragArea" xy="68,-2" size="531,52" visible="false" type="rect"/>
+    <component id="n2_nq64" name="barrelButton" src="nq644e" fileName="Button/Attachment_Button.xml" xy="501,93" group="n8_nq64"/>
+    <component id="n3_nq64" name="trackButton" src="nq644e" fileName="Button/Attachment_Button.xml" xy="398,311" group="n8_nq64"/>
+    <component id="n4_nq64" name="scopeButton" src="nq644e" fileName="Button/Attachment_Button.xml" xy="86,93" group="n8_nq64"/>
+    <component id="n5_nq64" name="armorButton" src="nq644e" fileName="Button/Attachment_Button.xml" xy="23,265" group="n8_nq64"/>
+    <group id="n8_nq64" name="buttonGroup" xy="23,93" size="558,298" advanced="true"/>
+    <loader id="n9_nq64" name="dragIcon" xy="266,205" size="80,80" visible="false" touchable="false"/>
+  </displayList>
+</component>

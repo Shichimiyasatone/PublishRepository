@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="600,500">
+  <displayList>
+    <component id="n0_nq64" name="frame" src="nq644d" fileName="Frame/Backpack_Frame.xml" xy="0,0"/>
+  </displayList>
+</component>

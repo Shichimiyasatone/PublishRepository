@@ -119,6 +119,11 @@
     <image id="tzyk4a" name="Desert_Map_Picture.png" path="/Wallpaper/"/>
     <image id="tzyk4b" name="Loding_2_Picture.png" path="/Wallpaper/"/>
     <image id="tzyk4c" name="Room_Picture.png" path="/Wallpaper/"/>
+    <component id="nq644d" name="Backpack_Frame.xml" path="/Frame/"/>
+    <component id="nq644e" name="Attachment_Button.xml" path="/Button/"/>
+    <component id="nq644f" name="Backpack_Window.xml" path="/Windows/" exported="true"/>
+    <image id="nq644g" name="backpack.png" path="/Icon/"/>
+    <component id="nq644h" name="Backpack_Button.xml" path="/Button/"/>
   </resources>
   <publish name="BattleCity8102"/>
 </packageDescription>

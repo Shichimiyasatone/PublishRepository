@@ -20,12 +20,12 @@
     <component id="n18_l8el" name="boxButton" src="l8el3s" fileName="Button/BoxButton.xml" xy="75,195" size="87,87" aspect="true">
       <relation target="" sidePair="left-left"/>
     </component>
-    <list id="n19_l8el" name="buttleList" xy="408,582" size="232,80" group="n28_l8el" layout="row" overflow="hidden" scroll="horizontal" colGap="-3" defaultItem="ui://i2flv8jsl8el3t">
+    <list id="n19_l8el" name="bulletList" xy="408,582" size="232,80" group="n28_l8el" layout="row" overflow="hidden" scroll="horizontal" colGap="-3" defaultItem="ui://i2flv8jsl8el3t">
       <item/>
       <item/>
       <item/>
     </list>
-    <list id="n30_l8el" name="goodsList" xy="639,582" size="232,80" group="n28_l8el" layout="row" overflow="hidden" colGap="-3" defaultItem="ui://i2flv8jsl8el42">
+    <list id="n30_l8el" name="medecineList" xy="639,582" size="232,80" group="n28_l8el" layout="row" overflow="hidden" colGap="-3" defaultItem="ui://i2flv8jsl8el42">
       <item/>
       <item/>
       <item/>
@@ -49,5 +49,6 @@
     <group id="n36_ljd5" name="Record" xy="35,65" size="115,87" advanced="true">
       <relation target="" sidePair="left-left,top-top"/>
     </group>
+    <component id="n42_nq64" name="backpackButton" src="nq644h" fileName="Button/Backpack_Button.xml" xy="75,303"/>
   </displayList>
 </component>

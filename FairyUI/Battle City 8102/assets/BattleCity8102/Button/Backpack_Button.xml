@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="87,87" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <displayList>
+    <image id="n3_nq64" name="n3" src="nq644g" fileName="Icon/backpack.png" xy="0,0" size="87,87" aspect="true">
+      <gearDisplay controller="button" pages="0,2"/>
+    </image>
+    <image id="n5_nq64" name="n5" src="nq644g" fileName="Icon/backpack.png" xy="0,0" size="87,87" aspect="true" color="#d6d4d4">
+      <gearDisplay controller="button" pages="1,3"/>
+    </image>
+  </displayList>
+  <Button mode="Check"/>
+</component>
