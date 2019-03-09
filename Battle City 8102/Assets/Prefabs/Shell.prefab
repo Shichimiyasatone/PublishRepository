@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23129863654542404}
   - component: {fileID: 114188381578933012}
   - component: {fileID: 54568253840356002}
+  - component: {fileID: 114784035573386164}
+  - component: {fileID: 114117291031872786}
   m_Layer: 0
   m_Name: Shell
   m_TagString: Shell
@@ -100,6 +102,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &114117291031872786
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884552511940724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114188381578933012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,6 +137,38 @@ MonoBehaviour:
   shellExplosion: {fileID: 195792, guid: 89e78efe92dfe5a42837b392cdb0bf9e, type: 2}
   shellExplositionAudio: {fileID: 8300000, guid: 3a77defcde1caaa40b6f7502547e0c4e,
     type: 3}
+--- !u!114 &114784035573386164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884552511940724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 173
+    i1: 157
+    i2: 30
+    i3: 253
+    i4: 17
+    i5: 254
+    i6: 106
+    i7: 116
+    i8: 184
+    i9: 59
+    i10: 117
+    i11: 21
+    i12: 43
+    i13: 148
+    i14: 151
+    i15: 238
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!136 &136299981959621810
 CapsuleCollider:
   m_ObjectHideFlags: 1

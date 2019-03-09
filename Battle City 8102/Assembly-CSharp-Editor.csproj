@@ -263,10 +263,10 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="DOTween">
- <HintPath>E:/GitHub/StudyRepository/PublishRepository/Battle City 8102/Assets/Plugins/DOTween_1_2_055/DOTween/DOTween.dll</HintPath>
+ <HintPath>E:/UnityWorkspace/MyProject/Battle City 8102/Assets/Plugins/DOTween_1_2_055/DOTween/DOTween.dll</HintPath>
  </Reference>
  <Reference Include="DOTweenEditor">
- <HintPath>E:/GitHub/StudyRepository/PublishRepository/Battle City 8102/Assets/Plugins/DOTween_1_2_055/DOTween/Editor/DOTweenEditor.dll</HintPath>
+ <HintPath>E:/UnityWorkspace/MyProject/Battle City 8102/Assets/Plugins/DOTween_1_2_055/DOTween/Editor/DOTweenEditor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>

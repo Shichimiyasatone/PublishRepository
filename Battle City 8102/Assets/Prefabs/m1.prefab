@@ -77,9 +77,12 @@ GameObject:
   - component: {fileID: 114817514256430886}
   - component: {fileID: 114346355373681294}
   - component: {fileID: 114460756218231118}
+  - component: {fileID: 114497025853272100}
+  - component: {fileID: 114448759437750598}
+  - component: {fileID: 114979026862086936}
   m_Layer: 0
   m_Name: m1
-  m_TagString: Untagged
+  m_TagString: Tank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +319,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1787669841385238}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 5.84, y: 4.72, z: 10.74}
@@ -353,8 +356,7 @@ MonoBehaviour:
     type: 2}
   shellSpeed: 500
   shotAudio: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
-  battleUIPanel: {fileID: 1183394927915886, guid: e1f5830c245506641ab321a4fc08e463,
-    type: 2}
+  battleUIPanel: {fileID: 0}
 --- !u!114 &114411481110496006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +373,27 @@ MonoBehaviour:
   tankMoveSpeed: 60
   turreRotateSpeed: 60
   maxSpeed: 10
+--- !u!114 &114448759437750598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787669841385238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 3
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
 --- !u!114 &114460756218231118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -385,6 +408,39 @@ MonoBehaviour:
   hp: 100
   tankExplotion: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 2}
   explosionAudio: {fileID: 8300000, guid: 5c27182a28a7eb942a362e6d198fe0e6, type: 3}
+  battleUIPanel: {fileID: 0}
+--- !u!114 &114497025853272100
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787669841385238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 138
+    i1: 151
+    i2: 176
+    i3: 210
+    i4: 208
+    i5: 118
+    i6: 153
+    i7: 212
+    i8: 40
+    i9: 144
+    i10: 162
+    i11: 103
+    i12: 71
+    i13: 194
+    i14: 207
+    i15: 142
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 1
 --- !u!114 &114817514256430886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,3 +453,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goodsList: []
+--- !u!114 &114979026862086936
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787669841385238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d53616cc35597a489af1cf8f400ab78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

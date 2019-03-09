@@ -2,12 +2,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 /**
  * 管理物品的拾取、展示、使用
  */
-public class GoodsUI : MonoBehaviour {
+public class GoodsUI : MonoBehaviour
+{
 
     // 拾取事件代理
     public delegate bool GetGoodsDelegate(Goods goods);
@@ -133,6 +133,10 @@ public class GoodsUI : MonoBehaviour {
 
         GButton backpackButton = battleComponent.GetChild("backpackButton").asButton;
         backpackButton.onClick.Add(()=> {
+            if (backpackWindow!=null&&backpackWindow.isShowing)
+            {
+                backpackWindow.Dispose();
+            }
             backpackWindow = new BackpackWindow();
             backpackWindow.Show();
         });
@@ -349,8 +353,10 @@ public class GoodsUI : MonoBehaviour {
 
     private void dropGoods(GButton btn)
     {
-        GameObject gb = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Goods.prefab", typeof(GameObject)) as GameObject;
-        Goods goods = gb.GetComponent<Goods>();
+        //TODO
+        // go为空
+        GameObject go = Resources.Load("Assets/Resources/Prefabs/Goods.prefab")as GameObject;
+        Goods goods = go.GetComponent<Goods>();
         goods.type = btn.title;
         goods.icon = btn.icon;
         goods.count = int.Parse(btn.GetChild("countTextField").asTextField.text);
@@ -359,9 +365,10 @@ public class GoodsUI : MonoBehaviour {
         Debug.Log(btn.GetChild("coldDownTextField").asTextField.text);
         goods.coldDownTime = float.Parse(btn.GetChild("coldDownTextField").asTextField.text);
         // 使用UUID随机命名
-        gb.name = System.Guid.NewGuid().ToString();
-        Transform transform = GameObject.Find("m1").transform;
-        Instantiate(gb, transform.position, transform.rotation);
+        go.name = System.Guid.NewGuid().ToString();
+        // 委托坦克使用孵化器由服务器生成
+        DropGoods.dropGoodsDelegate(go);
+        //Instantiate(gb, transform.position, transform.rotation);
         //dropGoodsDelegate();
 
         switch (btn.title)

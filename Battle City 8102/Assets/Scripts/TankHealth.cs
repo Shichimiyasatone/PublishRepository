@@ -2,30 +2,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 /**
  * 控制血量的脚本，hp与进度条关联
  * 此物体应为网络物体
  */
-// NetworkBehaviour
-public class TankHealth : MonoBehaviour
+public class TankHealth : NetworkBehaviour
 {
-    //[SyncVar(hook = "OnChangeHealth")]
+    // 钩子函数，当hp变化时调用OnchangeHealth更新血条
+    [SyncVar(hook = "OnChangeHealth")]
+    // 初始血量100
     public int hp = 100;
+    // 坦克爆炸特效
     public GameObject tankExplotion;
+    // 爆炸音效
     public AudioClip explosionAudio;
     // 血量进度条
+    public GameObject battleUIPanel;
     private GProgressBar hpProgressBar;
 
+    // 用于记录总血量，赋值进度条显示
     private int hpTotal;
 
     // Use this for initialization
     void Start()
     {
-        //Debug.Log(GRoot.inst.GetChild("Battle_Component").name);
-        //GGroup footerGroup = GRoot.inst.GetChild("footer").asGroup;
-        //hpProgressBar = GRoot.inst.GetChildInGroup(footerGroup, "hpProgressBar").asProgress;
+        //GComponent battleComponent = battleUIPanel.GetComponent<UIPanel>().ui;
+        //GGroup footerGroup = battleComponent.GetChild("footer").asGroup;
+        //hpProgressBar = battleComponent.GetChildInGroup(footerGroup, "hpProgressBar").asProgress;
 
-        hpTotal = hp;
+        //hpTotal = hp;
     }
 
     // Update is called once per frame

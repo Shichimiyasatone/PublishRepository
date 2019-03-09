@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 65931461107883474}
   - component: {fileID: 23149217349252638}
   - component: {fileID: 114763045340807680}
+  - component: {fileID: 114557934794093828}
+  - component: {fileID: 114913427963883138}
   m_Layer: 0
   m_Name: Goods
   m_TagString: Goods
@@ -96,6 +98,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114557934794093828
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412903582688846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 121
+    i1: 101
+    i2: 77
+    i3: 46
+    i4: 54
+    i5: 104
+    i6: 66
+    i7: 244
+    i8: 217
+    i9: 6
+    i10: 171
+    i11: 106
+    i12: 75
+    i13: 243
+    i14: 243
+    i15: 93
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
 --- !u!114 &114763045340807680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,3 +147,24 @@ MonoBehaviour:
   goodsName: "7.62\u6BEB\u7C73\u5B50\u5F39"
   description: "\u6B65\u67AA\u3001\u72D9\u51FB\u67AA\u4F7F\u7528"
   coldDownTime: 2
+--- !u!114 &114913427963883138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1412903582688846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1
