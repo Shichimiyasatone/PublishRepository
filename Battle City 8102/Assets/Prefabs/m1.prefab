@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 114497025853272100}
   - component: {fileID: 114448759437750598}
   - component: {fileID: 114979026862086936}
+  - component: {fileID: 114714749501850342}
   m_Layer: 0
   m_Name: m1
   m_TagString: Tank
@@ -356,7 +357,6 @@ MonoBehaviour:
     type: 2}
   shellSpeed: 500
   shotAudio: {fileID: 8300000, guid: 672a9941361ad494a99fba36759eca80, type: 3}
-  battleUIPanel: {fileID: 0}
 --- !u!114 &114411481110496006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,7 +408,6 @@ MonoBehaviour:
   hp: 100
   tankExplotion: {fileID: 151086, guid: ee49a9a8678ecf8468eb488e1ac8d42b, type: 2}
   explosionAudio: {fileID: 8300000, guid: 5c27182a28a7eb942a362e6d198fe0e6, type: 3}
-  battleUIPanel: {fileID: 0}
 --- !u!114 &114497025853272100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -441,6 +440,17 @@ MonoBehaviour:
     i15: 142
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &114714749501850342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787669841385238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a08ab7dfe126b4cb83f59ea9deb685, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114817514256430886
 MonoBehaviour:
   m_ObjectHideFlags: 1

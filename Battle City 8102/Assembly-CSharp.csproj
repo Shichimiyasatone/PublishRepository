@@ -203,7 +203,6 @@
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
      <Compile Include="Assets\Scripts\CreateRmWindow.cs" />
      <Compile Include="Assets\Scripts\DestroyForTime.cs" />
-     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\DropGoods.cs" />
      <Compile Include="Assets\Scripts\Goods.cs" />
      <Compile Include="Assets\Scripts\GoodsUI.cs" />

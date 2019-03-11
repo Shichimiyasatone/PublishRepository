@@ -14,7 +14,7 @@ public class BattleManager : MonoBehaviour {
         manager = GetComponent<NetworkManager>();
 
         //Debug.Log("开启服务器");
-        //manager.StartServer();
+        //manager.StartHost();
 
         Debug.Log("开启客户端");
         manager.StartClient();

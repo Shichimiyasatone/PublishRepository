@@ -14,17 +14,14 @@ public class TankAttack : NetworkBehaviour
     public AudioClip shotAudio;
     private Transform firePosition;
 
-    public GameObject battleUIPanel;
+    private GameObject battleUIPanel;
     private GButton fireButton;
+
+    private bool flag= false;
     // Use this for initialization
     void Start()
     {
-        GComponent battleComponent = battleUIPanel.GetComponent<UIPanel>().ui;
-        fireButton = battleComponent.GetChild("fireButton").asButton;
-        fireButton.onClick.Add(() => {
-            Debug.Log("开火");
-            CmdLanPlayerFire();
-        });
+        
 
         firePosition = transform.Find("Main_Turre").Find("FirePositon");
     }
@@ -32,7 +29,23 @@ public class TankAttack : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!flag&&battleUIPanel == null)
+        {
+            battleUIPanel = GameObject.Find("BattleUIPanel");
 
+            GComponent battleComponent = battleUIPanel.GetComponent<UIPanel>().ui;
+            fireButton = battleComponent.GetChild("fireButton").asButton;
+            fireButton.onClick.Add(() => {
+                Debug.Log("开火");
+                if (!isLocalPlayer)
+                {
+                    Debug.Log("我是server?" + isServer);
+                }
+                CmdLanPlayerFire();
+            });
+
+            flag = true;
+        }
     }
 
     //void SinglePlayerFire()
@@ -43,6 +56,8 @@ public class TankAttack : NetworkBehaviour
     //    AudioSource.PlayClipAtPoint(shotAudio, transform.position);
     //}
 
+    //TODO
+    // 客户端开炮角度有误
     [Command]
     void CmdLanPlayerFire()
     {

@@ -108,12 +108,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee21db65c508760448879ed4d4879d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 
-  icon: 
-  count: 0
-  goodsName: 
-  description: 
-  coldDownTime: 0
+  type: bullet
+  icon: ui://i2flv8jsl8el3w
+  count: 10
+  goodsName: "7.62\u6BEB\u7C73\u5B50\u5F39"
+  description: "\u6B65\u67AA\u3001\u72D9\u51FB\u67AA\u4F7F\u7528"
+  coldDownTime: 2
 --- !u!114 &114476479507325536
 MonoBehaviour:
   m_ObjectHideFlags: 1

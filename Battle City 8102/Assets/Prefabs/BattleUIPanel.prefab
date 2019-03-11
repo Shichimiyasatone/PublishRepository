@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 114367903125615660}
   - component: {fileID: 114769768963494730}
   - component: {fileID: 114651757125573886}
-  - component: {fileID: 114784789808798964}
   m_Layer: 5
   m_Name: BattleUIPanel
   m_TagString: Untagged
@@ -89,16 +88,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fd4a9189d6d4fac4290c53d7e83ba822, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114784789808798964
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1183394927915886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa027a3e04bbc314394cc0b57f933457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

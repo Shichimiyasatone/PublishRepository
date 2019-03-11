@@ -18,26 +18,37 @@ public class TankHealth : NetworkBehaviour
     // 爆炸音效
     public AudioClip explosionAudio;
     // 血量进度条
-    public GameObject battleUIPanel;
+    private GameObject battleUIPanel;
     private GProgressBar hpProgressBar;
 
     // 用于记录总血量，赋值进度条显示
     private int hpTotal;
 
+    private bool flag = false;
+
     // Use this for initialization
     void Start()
     {
-        //GComponent battleComponent = battleUIPanel.GetComponent<UIPanel>().ui;
-        //GGroup footerGroup = battleComponent.GetChild("footer").asGroup;
-        //hpProgressBar = battleComponent.GetChildInGroup(footerGroup, "hpProgressBar").asProgress;
-
-        //hpTotal = hp;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (battleUIPanel==null)
+        {
+             battleUIPanel=GameObject.Find("BattleUIPanel");
+        }
+        else if (!flag)
+        {
+            GComponent battleComponent = battleUIPanel.GetComponent<UIPanel>().ui;
+            GGroup footerGroup = battleComponent.GetChild("footer").asGroup;
+            hpProgressBar = battleComponent.GetChildInGroup(footerGroup, "hpProgressBar").asProgress;
 
+            hpTotal = hp;
+
+            flag = true;
+        }
     }
 
     void TakeDamage()

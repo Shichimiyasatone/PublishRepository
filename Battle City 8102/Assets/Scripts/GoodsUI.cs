@@ -353,9 +353,7 @@ public class GoodsUI : MonoBehaviour
 
     private void dropGoods(GButton btn)
     {
-        //TODO
-        // go为空
-        GameObject go = Resources.Load("Assets/Resources/Prefabs/Goods.prefab")as GameObject;
+        GameObject go = Resources.Load("Prefabs/Goods") as GameObject;
         Goods goods = go.GetComponent<Goods>();
         goods.type = btn.title;
         goods.icon = btn.icon;

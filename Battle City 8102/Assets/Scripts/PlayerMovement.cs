@@ -23,17 +23,28 @@ public class PlayerMovement : NetworkBehaviour {
     private float turreVertical;
     private float deltaTurreRotateY = 0f;
 
+    private bool flag = false;
 
     void Awake()
     {
-        BattleUI.moveDelegate += Move;
-        CameraFollow.cameraRotate += Turn;
+       
     }
 
     void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
         initTurreDegree = transform.localEulerAngles.y;
+    }
+
+    void Update()
+    {
+        if (!flag&& GameObject.Find("BattleUIPanel")!=null)
+        {
+            BattleUI.moveDelegate += Move;
+            CameraFollow.cameraRotate += Turn;
+
+            flag = true;
+        }
     }
 
     void FixedUpdate()

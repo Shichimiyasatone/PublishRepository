@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-E:/UnityWorkspace/MyProject/Battle City 8102/Build/Test_Server.exe
+E:/UnityWorkspace/MyProject/Battle City 8102/Build/Test_Host.exe
 SceneListBegin?
 Assets/Scenes/Battle.unity
 Assets/Scenes/Main.unity
@@ -85,7 +85,7 @@ f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 c5bb6e9d9cd13c13abaeff9b696ad533 Assembly-CSharp.dll:.Box
-98ea6e50e092765f1622872ed635a756 Assembly-CSharp.dll:.CameraFollow
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CameraFollow
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:FairyGUI.CaptureCamera
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 4b12dd839b2293f8457cd67cc3610b85 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -124,10 +124,10 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
-adc7b9db29d4d50b13f7ea154a0fbc61 Assembly-CSharp.dll:.TankAttack
+d6ce918f23e6ac26736ff6bb015a9504 Assembly-CSharp.dll:.TankAttack
 30c6ab0e659e23a1b0d21e9a92b9625f Assembly-CSharp.dll:.Goods
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BattleManager
-f3fb52a1b643c1fb3450b6d49ae8619e Assembly-CSharp.dll:.TankHealth
+d9204c1e062a109a0c2ed894d809dab1 Assembly-CSharp.dll:.TankHealth
 ec90909fe4e17503bd3cf24bfb705b67 Assembly-CSharp.dll:FairyGUI.UIPainter
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.BattleUI
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -171,3 +171,4 @@ f266a453cd4bfbe81533762a3e3589f4 DOTween.dll:DG.Tweening.Core.DOTweenComponent
 1fb2257325ae73aa275c7baeaaa2c163 Assembly-CSharp.dll:FairyGUI.UIContentScaler
 b765c30b08d85c1803f86bc92db29d8a Assembly-CSharp.dll:.MainUI
 e30d6d778308c43330c6b12f45469d0f Assembly-CSharp.dll:.Tank
+1df234784afa2cbe0613283a35c66908 Assembly-CSharp.dll:.InitBattle
