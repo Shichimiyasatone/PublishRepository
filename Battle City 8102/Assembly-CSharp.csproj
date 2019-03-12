@@ -200,6 +200,8 @@
      <Compile Include="Assets\Scripts\ChatRoom.cs" />
      <Compile Include="Assets\Scripts\ChatRoomClient.cs" />
      <Compile Include="Assets\Scripts\ChatRoomServer.cs" />
+     <Compile Include="Assets\Scripts\Circle.cs" />
+     <Compile Include="Assets\Scripts\CircleController.cs" />
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
      <Compile Include="Assets\Scripts\CreateRmWindow.cs" />
      <Compile Include="Assets\Scripts\DestroyForTime.cs" />
@@ -212,6 +214,8 @@
      <Compile Include="Assets\Scripts\Joystick.cs" />
      <Compile Include="Assets\Scripts\Loading.cs" />
      <Compile Include="Assets\Scripts\MainUI.cs" />
+     <Compile Include="Assets\Scripts\MapUI.cs" />
+     <Compile Include="Assets\Scripts\MapWindow.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Room.cs" />

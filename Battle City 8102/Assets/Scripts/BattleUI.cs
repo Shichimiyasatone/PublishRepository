@@ -78,6 +78,7 @@ public class BattleUI : MonoBehaviour {
         initLeftPercX = ((compassList.scrollPane.contentWidth / 2 ) - compassList.width) / (compassList.scrollPane.contentWidth - compassList.width);
         lastPercX = initRightPercX;
         compassList.scrollPane.SetPercX(initRightPercX, false);
+
     }
 
     // Update is called once per frame

@@ -8,6 +8,7 @@ TagManager:
   - Box
   - Shell
   - Tank
+  - Circle
   layers:
   - Default
   - TransparentFX
