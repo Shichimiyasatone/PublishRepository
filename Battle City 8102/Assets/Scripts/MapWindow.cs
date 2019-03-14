@@ -15,6 +15,9 @@ public class MapWindow : Window {
     // 下次缩圈位置，边缘为白色
     private GImage targetCircle;
 
+    // 玩家定位
+    private GImage locationImage;
+
     // 比例尺，icon.width/mapSize
     private float mapScale;
 
@@ -53,6 +56,9 @@ public class MapWindow : Window {
             CircleController.currentCircleDelegate();
         }
         CircleController.targetCircleDelegate();
+
+        locationImage = mapComponent.GetChild("locationImage").asImage;
+        Tank.followPlyaerDelegate += FollowPlayer;
     }
 
     // Use this for initialization
@@ -94,5 +100,19 @@ public class MapWindow : Window {
         targetCircle.position = new Vector3(targetX, targetY);
         targetCircle.scaleX = targetR / (CircleController.mapSize * 1.5f);
         targetCircle.scaleY = targetCircle.scaleX;
+    }
+
+    private void FollowPlayer(Transform transform)
+    {
+        Debug.Log(transform.Find("Main_Turre").transform.rotation.y);
+        locationImage.rotation = 
+            transform.Find("Main_Turre").transform.localEulerAngles.y
+            +transform.localEulerAngles.y-45;
+
+        targetX = CircleController.targetX * mapScale + background.width / 2;
+        targetY = -(CircleController.targetZ * mapScale - background.height / 2);
+        targetR = CircleController.targetR;
+        locationImage.position = new Vector3(transform.position.x * mapScale + background.width / 2,
+                                                 -(transform.position.z * mapScale - background.height / 2));
     }
 }

@@ -40,10 +40,13 @@ public class PlayerMovement : NetworkBehaviour {
     {
         if (!flag&& GameObject.Find("BattleUIPanel")!=null)
         {
-            BattleUI.moveDelegate += Move;
-            CameraFollow.cameraRotate += Turn;
-
+            if (isLocalPlayer)
+            {
+                GameObject.Find("BattleUIPanel").GetComponent<BattleUI>().moveDelegate += Move;
+                GameObject.Find("CameraAxis").GetComponent<CameraFollow>().cameraRotate += Turn;
             flag = true;
+
+            }
         }
     }
 

@@ -83,17 +83,9 @@ public class GoodsUI : MonoBehaviour
             this.box = box;
         };
 
-        Tank.goodsDelegate += (List<Goods> goodsList) => {
-            // 清除旧窗口
-            if (goodsWindow != null)
-            {
-                goodsWindow.Hide();
-                goodsWindow.Dispose();
-                goodsWindow = null;
-            }
-            // 新建新窗口
-            createGoodsWindow(goodsList);
-        };
+        //Tank.goodsDelegate += (List<Goods> goodsList) => {
+           
+        //};
 
         // 注册拖拽事件
         GGroup footer = battleComponent.GetChild("footer").asGroup;
@@ -448,5 +440,18 @@ public class GoodsUI : MonoBehaviour
         alertTransition.Play(() => {
             GRoot.inst.RemoveChild(alertComponent);
         });
+    }
+
+    public void initGoodsListWindow(List<Goods>goodsList)
+    {
+        // 清除旧窗口
+        if (goodsWindow != null)
+        {
+            goodsWindow.Hide();
+            goodsWindow.Dispose();
+            goodsWindow = null;
+        }
+        // 新建新窗口
+        createGoodsWindow(goodsList);
     }
 }

@@ -202,6 +202,7 @@
      <Compile Include="Assets\Scripts\ChatRoomServer.cs" />
      <Compile Include="Assets\Scripts\Circle.cs" />
      <Compile Include="Assets\Scripts\CircleController.cs" />
+     <Compile Include="Assets\Scripts\CmdDelegate.cs" />
      <Compile Include="Assets\Scripts\ConfigWindow.cs" />
      <Compile Include="Assets\Scripts\CreateRmWindow.cs" />
      <Compile Include="Assets\Scripts\DestroyForTime.cs" />
@@ -222,6 +223,7 @@
      <Compile Include="Assets\Scripts\RoomInfoWindow.cs" />
      <Compile Include="Assets\Scripts\RoomManager.cs" />
      <Compile Include="Assets\Scripts\RoomWindow.cs" />
+     <Compile Include="Assets\Scripts\ScopeUI.cs" />
      <Compile Include="Assets\Scripts\Shell.cs" />
      <Compile Include="Assets\Scripts\Tank.cs" />
      <Compile Include="Assets\Scripts\TankAttack.cs" />

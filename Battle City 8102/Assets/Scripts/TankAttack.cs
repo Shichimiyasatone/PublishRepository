@@ -21,8 +21,6 @@ public class TankAttack : NetworkBehaviour
     // Use this for initialization
     void Start()
     {
-        
-
         firePosition = transform.Find("Main_Turre").Find("FirePositon");
     }
 
@@ -31,39 +29,31 @@ public class TankAttack : NetworkBehaviour
     {
         if (!flag&&battleUIPanel == null)
         {
+            if (isLocalPlayer)
+            {
+
             battleUIPanel = GameObject.Find("BattleUIPanel");
 
             GComponent battleComponent = battleUIPanel.GetComponent<UIPanel>().ui;
             fireButton = battleComponent.GetChild("fireButton").asButton;
             fireButton.onClick.Add(() => {
-                Debug.Log("开火");
-                if (!isLocalPlayer)
-                {
-                    Debug.Log("我是server?" + isServer);
-                }
-                CmdLanPlayerFire();
+                GameObject go = Instantiate(shellPrefab, firePosition.position, firePosition.rotation) as GameObject;
+                go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
+                AudioSource.PlayClipAtPoint(shotAudio, transform.position);
+                CmdLanPlayerFire(go);
             });
 
             flag = true;
+            }
         }
     }
-
-    //void SinglePlayerFire()
-    //{
-    //    GameObject go = GameObject.Instantiate(shellPrefab, firePosition.position, firePosition.rotation) as GameObject;
-    //    go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
-    //    Debug.Log(go.GetComponent<Rigidbody>().velocity);
-    //    AudioSource.PlayClipAtPoint(shotAudio, transform.position);
-    //}
 
     //TODO
     // 客户端开炮角度有误
     [Command]
-    void CmdLanPlayerFire()
+    void CmdLanPlayerFire(GameObject go)
     {
-        GameObject go = Instantiate(shellPrefab, firePosition.position, firePosition.rotation) as GameObject;
-        go.GetComponent<Rigidbody>().velocity = go.transform.forward * shellSpeed;
-        AudioSource.PlayClipAtPoint(shotAudio, transform.position);
+        
         NetworkServer.Spawn(go);
     }
 }

@@ -49,7 +49,7 @@ public class MainUI : MonoBehaviour {
     public int money = 100;
     public int experience = 10;
     //测试房间信息
-    public List<Room> rooms = new List<Room>();
+    public static List<Room> rooms = new List<Room>();
     //测试坦克总数
     public int tankNum = 10;
 

@@ -9,8 +9,8 @@ public class BattleUI : MonoBehaviour {
     public delegate void MoveDelegate(float rotation, float percZ);
     public delegate void TurnDelegate(float turnUp, float turnDown);
 
-    public static MoveDelegate moveDelegate;
-    public static TurnDelegate turnDelegate;
+    public MoveDelegate moveDelegate;
+    public TurnDelegate turnDelegate;
 
     private GComponent battleComponent;
 

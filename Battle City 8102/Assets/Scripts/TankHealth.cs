@@ -58,7 +58,6 @@ public class TankHealth : MonoBehaviour
         // 圈外持续掉血
         if (bleeding)
         {
-            Debug.Log("hp = "+hp);
             hp -= CircleController.stage*Time.deltaTime;
             if (hp <= 0)
             {

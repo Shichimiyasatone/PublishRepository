@@ -262,7 +262,8 @@ public class RoomWindow :Window {
         {
             roomDestroyDelegate();
         }
-        
+        // 清空房间列表
+        MainUI.rooms.Clear();
     }
 
     //异步加载新场景

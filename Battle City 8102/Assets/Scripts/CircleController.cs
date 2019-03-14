@@ -43,13 +43,15 @@ public class CircleController : MonoBehaviour {
     // 圈数
     public static int stage = 0;
     // Use this for initialization
+    // 将先于连接执行
     void Start()
     {
-        // 实际上在等待一段时候后再调用
-        startCircle();
+
     }
 	
-    public void startCircle()
+    // TODO
+    // 交由服务器生成，理想状态为玩家同步服务器中的circle
+    public GameObject startCircle()
     {
         stage = 0;
 
@@ -63,6 +65,8 @@ public class CircleController : MonoBehaviour {
 
         circle = Instantiate(circlePrefab, Vector3.zero, new Quaternion(0, 0, 0, 0));
         circle.transform.localScale = new Vector3(mapSize * 1.5f, 20, mapSize * 1.5f);
+
+
         // 缩圈以1/2进行，1.5 / 2 = 0.75
         // 这里的r其实为直径
         r = mapSize * 0.75f;
@@ -72,10 +76,17 @@ public class CircleController : MonoBehaviour {
         targetX = x;
         targetZ = z;
         targetR = r;
+
+        return circle;
     }
 
 	// Update is called once per frame
 	void Update () {
+        if (circle==null||!Tank.IsServer)
+        {
+            return;
+        }
+
         // 等待计时
         if (counting)
         {
@@ -99,7 +110,7 @@ public class CircleController : MonoBehaviour {
     // 第一个圈r1 = mapSize*1.5
     // 第二个圈r2 = r1*0.5
     // 使用DoTween渐变大小
-    void CircleMove()
+    public void CircleMove()
     {
         if (currentCircleDelegate != null)
         {

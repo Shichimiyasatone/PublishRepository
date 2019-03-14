@@ -23,6 +23,11 @@ public class Shell : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        // 穿过毒圈
+        if (collider.tag == "Circle")
+        {
+            return;
+        }
         AudioSource.PlayClipAtPoint(shellExplositionAudio, transform.position);
         GameObject.Instantiate(shellExplosion, transform.position, transform.rotation);
         Destroy(this.gameObject);

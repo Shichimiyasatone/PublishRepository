@@ -441,6 +441,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.013888889
       objectReference: {fileID: 0}
+    - target: {fileID: 114568774345899202, guid: e1f5830c245506641ab321a4fc08e463,
+        type: 2}
+      propertyPath: scopeCanvas
+      value: 
+      objectReference: {fileID: 985622335}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e1f5830c245506641ab321a4fc08e463, type: 2}
   m_IsPrefabParent: 0
@@ -742,6 +747,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6ef0c2097e4ff449f8ac25988ac6ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tank: {fileID: 0}
 --- !u!1 &985622335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1042,22 +1048,6 @@ Transform:
   m_Father: {fileID: 1176325776}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1610929029 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1314888220997230, guid: e1f5830c245506641ab321a4fc08e463,
-    type: 2}
-  m_PrefabInternal: {fileID: 351711873}
---- !u!114 &1610929035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1610929029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce03d255a276bcf4ba78f5cb0b472b66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1623513897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1150,7 @@ MonoBehaviour:
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
-  m_PlayerPrefab: {fileID: 1787669841385238, guid: 8a97b0d2d07699d42890a26747c2cf8e,
+  m_PlayerPrefab: {fileID: 1695881165044860, guid: 565249c9ce0282b43852557bd08041a2,
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
@@ -1170,6 +1160,7 @@ MonoBehaviour:
   - {fileID: 1884552511940724, guid: ad9d1efd11fe6a74b83b75152b9497ee, type: 2}
   - {fileID: 1412903582688846, guid: 79654d2e366842f4d906ab6a4bf3f35d, type: 2}
   - {fileID: 1690618806701790, guid: 596306450c7b4284d9fa97d87480128b, type: 2}
+  - {fileID: 1006982368321306, guid: 2b21986c317fb674bb32b719f5585929, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:

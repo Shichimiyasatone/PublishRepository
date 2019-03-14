@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4092170155452130}
   - component: {fileID: 114055984387695548}
   - component: {fileID: 114518296213892950}
+  - component: {fileID: 114607626192162006}
   m_Layer: 0
   m_Name: Circle
   m_TagString: Untagged
@@ -168,6 +169,25 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!114 &114607626192162006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006982368321306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4549742826649476}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114680775867137808
 MonoBehaviour:
   m_ObjectHideFlags: 1
