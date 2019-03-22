@@ -58,6 +58,9 @@ public class GoodsUI : MonoBehaviour
     // 提示动效
     Transition alertTransition;
 
+    [SerializeField]
+    public GameObject goodsPrefab;
+
     // Use this for initialization
     void Start () {
         battleComponent = GetComponent<UIPanel>().ui;
@@ -345,7 +348,9 @@ public class GoodsUI : MonoBehaviour
 
     private void dropGoods(GButton btn)
     {
-        GameObject go = Resources.Load("Prefabs/Goods") as GameObject;
+
+        //GameObject prefab = Resources.Load("Prefabs/Goods") as GameObject;
+        GameObject go = Instantiate(goodsPrefab);
         Goods goods = go.GetComponent<Goods>();
         goods.type = btn.title;
         goods.icon = btn.icon;
@@ -358,7 +363,6 @@ public class GoodsUI : MonoBehaviour
         go.name = System.Guid.NewGuid().ToString();
         // 委托坦克使用孵化器由服务器生成
         DropGoods.dropGoodsDelegate(go);
-        //Instantiate(gb, transform.position, transform.rotation);
         //dropGoodsDelegate();
 
         switch (btn.title)

@@ -48,8 +48,6 @@ public class TankAttack : NetworkBehaviour
         }
     }
 
-    //TODO
-    // 客户端开炮角度有误
     [Command]
     void CmdLanPlayerFire(GameObject go)
     {

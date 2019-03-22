@@ -13,11 +13,11 @@ public class BattleManager : MonoBehaviour {
 	void Start () {
         manager = GetComponent<NetworkManager>();
 
-        //Debug.Log("开启服务器");
-        //manager.StartHost();
+        Debug.Log("开启服务器");
+        manager.StartHost();
 
-        Debug.Log("开启客户端");
-        manager.StartClient();
+        //Debug.Log("开启客户端");
+        //manager.StartClient();
     }
 
     // Update is called once per frame

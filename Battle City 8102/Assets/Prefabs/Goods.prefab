@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 65931461107883474}
   - component: {fileID: 23149217349252638}
   - component: {fileID: 114763045340807680}
-  - component: {fileID: 114557934794093828}
-  - component: {fileID: 114913427963883138}
+  - component: {fileID: 114318898819684702}
+  - component: {fileID: 114887771590019168}
   m_Layer: 0
   m_Name: Goods
   m_TagString: Goods
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114557934794093828
+--- !u!114 &114318898819684702
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -147,7 +147,7 @@ MonoBehaviour:
   goodsName: "7.62\u6BEB\u7C73\u5B50\u5F39"
   description: "\u6B65\u67AA\u3001\u72D9\u51FB\u67AA\u4F7F\u7528"
   coldDownTime: 2
---- !u!114 &114913427963883138
+--- !u!114 &114887771590019168
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

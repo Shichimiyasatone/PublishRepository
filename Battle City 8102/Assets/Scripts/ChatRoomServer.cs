@@ -20,6 +20,7 @@ public class ChatRoomServer {
         var NotConnectClient = new List<ChatRoomClient>();
         foreach (var client in clientList)
         {
+            // Connected不应该作为超时判断条件，使用发送0字节来判断
             if (client.Connected())
             {
                 client.SendMessage(data);

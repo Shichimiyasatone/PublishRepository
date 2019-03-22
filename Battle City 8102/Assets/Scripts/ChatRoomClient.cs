@@ -26,7 +26,7 @@ public class ChatRoomClient {
 
     private void ReceiveMessage()
     {
-        //服务器一直接受客户端数据
+        //服务器一直接收客户端数据
         while (true)
         {
             //如果客户端掉线，直接出循环

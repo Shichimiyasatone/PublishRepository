@@ -43,8 +43,8 @@ public class Tank : NetworkBehaviour {
                 GameObject.Find("CameraAxis").GetComponent<CameraFollow>().Rotate;
 
             goodsDelegate += GameObject.Find("BattleUIPanel").GetComponent<GoodsUI>().initGoodsListWindow;
+            IsServer = isServer;
         }
-        IsServer = isServer;
     }
     [Command]
     public void CmdTest(GameObject circle)
@@ -143,7 +143,10 @@ public class Tank : NetworkBehaviour {
             goodsList.Add(goods);
         }
         // 调用委托，显示物品列表
+        if (goodsDelegate!=null)
+        {
         goodsDelegate(goodsList);
+        }
     }
 
     void removeGoods(Goods goods)
@@ -157,8 +160,11 @@ public class Tank : NetworkBehaviour {
         {
             goodsList.Remove(goods);
         }
+        if (goodsDelegate!=null)
+        {
         // 更新物品列表
         goodsDelegate(goodsList);
+        }
     }
 
 }

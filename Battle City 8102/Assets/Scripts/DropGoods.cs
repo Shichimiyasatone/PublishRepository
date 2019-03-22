@@ -12,7 +12,10 @@ public class DropGoods : NetworkBehaviour
 
     // Use this for initialization
     void Start () {
-        dropGoodsDelegate += CmdDropGoods;
+        if (isLocalPlayer)
+        {
+        dropGoodsDelegate += InstantiateGoods;
+        }
     }
 	
 	// Update is called once per frame
@@ -20,12 +23,20 @@ public class DropGoods : NetworkBehaviour
 		
 	}
 
+    // TODO
+    // 其他客户端接收到的go为null！
     // 请求服务器执行
     [Command]
     private void CmdDropGoods(GameObject go)
     {
-        GameObject goods =  GameObject.Instantiate(go, this.transform.position, this.transform.rotation) as GameObject;
         // 孵化丢弃的物品
-        NetworkServer.Spawn(goods);
+        Debug.Log(go);
+        NetworkServer.Spawn(go);
     }
+
+    private void InstantiateGoods(GameObject go){
+        //GameObject gb = Instantiate(go, transform.position, transform.rotation);
+        go.transform.position = transform.position;
+        CmdDropGoods(go);
+}
 }

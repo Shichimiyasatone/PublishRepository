@@ -24,8 +24,9 @@ GameObject:
   - component: {fileID: 23275753438774168}
   - component: {fileID: 114146448623133270}
   - component: {fileID: 114476479507325536}
+  - component: {fileID: 114888416675935612}
   m_Layer: 0
-  m_Name: 6d41a3ad-1643-471c-b326-e5611deb6d96
+  m_Name: Goods
   m_TagString: Goods
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1394318934992646}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -19.14, y: 3.868939, z: 22.2}
+  m_LocalPosition: {x: -7.435355, y: -1.1699998, z: 3.3815053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,12 +109,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee21db65c508760448879ed4d4879d05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: bullet
-  icon: ui://i2flv8jsl8el3w
-  count: 10
-  goodsName: "7.62\u6BEB\u7C73\u5B50\u5F39"
-  description: "\u6B65\u67AA\u3001\u72D9\u51FB\u67AA\u4F7F\u7528"
-  coldDownTime: 2
+  type: medecine
+  icon: ui://i2flv8jsl8el43
+  count: 2
+  goodsName: "\u6B62\u75DB\u836F"
+  description: "\u63D0\u534770%\u80FD\u91CF"
+  coldDownTime: 8
 --- !u!114 &114476479507325536
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,3 +147,24 @@ MonoBehaviour:
     i15: 152
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
+--- !u!114 &114888416675935612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1394318934992646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TransformSyncMode: 1
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_SyncSpin: 0
+  m_MovementTheshold: 0.001
+  m_VelocityThreshold: 0.0001
+  m_SnapThreshold: 5
+  m_InterpolateRotation: 1
+  m_InterpolateMovement: 1

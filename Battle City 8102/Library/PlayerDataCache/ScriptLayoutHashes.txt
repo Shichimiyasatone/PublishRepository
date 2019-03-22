@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-E:/UnityWorkspace/MyProject/Battle City 8102/Build/Test_Host.exe
+E:/UnityWorkspace/MyProject/Battle City 8102/Build/Test_Client.exe
 SceneListBegin?
 Assets/Scenes/Battle.unity
 Assets/Scenes/Main.unity
@@ -20,7 +20,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 b68042b42e31990d84e7a4e65d228a60 Assembly-CSharp.dll:.ScopeUI
 d5be1ca94278aa7358c511834dede500 Assembly-CSharp.dll:.DestroyForTime
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.GoodsUI
+4d09e53e51a7ce89334c5205397361fd Assembly-CSharp.dll:.GoodsUI
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button

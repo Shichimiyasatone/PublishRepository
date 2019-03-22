@@ -32,6 +32,7 @@ public class CreateRmWindow : Window {
             rm.hostIP = System.Net.IPAddress.Loopback.ToString();
             MainUI.currentRoom = rm;
             RoomManager.CreateRoom(rm);
+            // 显示房间窗口
             RoomWindow rw = new RoomWindow();
             rw.Show();
             this.Dispose();

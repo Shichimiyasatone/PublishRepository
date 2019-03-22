@@ -225,6 +225,7 @@
      <Compile Include="Assets\Scripts\RoomWindow.cs" />
      <Compile Include="Assets\Scripts\ScopeUI.cs" />
      <Compile Include="Assets\Scripts\Shell.cs" />
+     <Compile Include="Assets\Scripts\SQLManager.cs" />
      <Compile Include="Assets\Scripts\Tank.cs" />
      <Compile Include="Assets\Scripts\TankAttack.cs" />
      <Compile Include="Assets\Scripts\TankHealth.cs" />
@@ -412,6 +413,12 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/Administrator/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
+ </Reference>
+ <Reference Include="Mono.Data.Sqlite">
+ <HintPath>E:/UnityWorkspace/MyProject/Battle City 8102/Assets/Plugins/SQLite/Mono.Data.Sqlite.dll</HintPath>
+ </Reference>
+ <Reference Include="System.Data">
+ <HintPath>E:/UnityWorkspace/MyProject/Battle City 8102/Assets/Plugins/SQLite/System.Data.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
