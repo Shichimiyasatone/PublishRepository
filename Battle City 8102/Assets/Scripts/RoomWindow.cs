@@ -5,7 +5,6 @@ using FairyGUI;
 using System.Text;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine.SceneManagement;
 using System;
 
 /*
@@ -29,11 +28,23 @@ public class RoomWindow :Window {
     private GList playerList;
 
     private List<string> message;
-    
+
+    private bool load = false;
     public RoomWindow()
     {
         
     }
+
+    //void Update()
+    //{
+    //    Debug.Log("Update");
+    //    if (load)
+    //    {
+    //        Debug.Log("给我加载！");
+    //        LoadNewScene();
+    //        load = false;
+    //    }
+    //}
 
     /*
      * 进入房间房主建立tcp服务器，成员连接服务器
@@ -65,6 +76,7 @@ public class RoomWindow :Window {
         try
         {
             ChatRoom.ConnectToServer(MainUI.currentRoom.hostIP);
+            Debug.Log(MainUI.currentRoom.hostIP);
         }
         catch (System.Exception e)
         {
@@ -119,8 +131,10 @@ public class RoomWindow :Window {
             }
             foreach (var player in MainUI.currentRoom.currentPlayer)
             {
-                if (player == MainUI.player)
+                // 分支未执行
+                if (player.ip == MainUI.player.ip)
                 {
+                    Debug.Log("修改了！");
                     player.isReady = MainUI.player.isReady;
                 }
             }
@@ -154,9 +168,10 @@ public class RoomWindow :Window {
                     return;
                 }
             }
+            // 随机场景对战主机
+            SelectHolder();
             // 异步加载战斗场景
-            this.Dispose();
-            LoadNewScene();
+            //LoadNewScene();
         });
 
         if (MainUI.player.isHost)
@@ -168,7 +183,6 @@ public class RoomWindow :Window {
         {
             startButton.visible = false;
         }
-        
     }
 
     private void RenderListItem(int index, GObject obj)
@@ -183,7 +197,8 @@ public class RoomWindow :Window {
             //btn.visible = false;
             return;
         }
-        Debug.Log("渲染第"+index+"个玩家");
+        Debug.Log("渲染第"+index+"个玩家，" + MainUI.currentRoom.currentPlayer[index].isReady);
+        obj.onClick.Clear();
         obj.onClick.Add(() => { });//点击玩家显示添加好友、玩家信息列表
         btn.title = MainUI.currentRoom.currentPlayer[index].name;
         btn.icon = UIPackage.GetItemURL("BattleCity8102", "rank" + MainUI.currentRoom.currentPlayer[index].rank);
@@ -204,6 +219,7 @@ public class RoomWindow :Window {
     //数据转换为playerList或string
     private void MessageHandler(byte[] data, int length)
     {
+        // 序列化房间列表
         try
         {
             using (MemoryStream ms = new MemoryStream())
@@ -225,13 +241,40 @@ public class RoomWindow :Window {
         }
         catch (System.Exception)
         {
-            string msg = Encoding.UTF8.GetString(data, 0, length);
-            message.Add(msg);
-            if (message.Count>50)
+            // 序列化主机信息
+            try
             {
-                message.RemoveRange(0, message.Count - 50);
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    BinaryFormatter bf = new BinaryFormatter();
+                    ms.Write(data, 0, length);
+                    ms.Flush();
+                    ms.Position = 0;
+                    HolderInfo holderInfo = bf.Deserialize(ms) as HolderInfo;
+                    Debug.Log(IPv4.GetLocalIP() + "接收到主机："+holderInfo.ip);
+                    if (holderInfo.ip == IPv4.GetLocalIP())
+                    {
+                        holderInfo.isHolder = true;
+                    }
+                    HolderInfoManager.holderInfo = holderInfo;
+                }
+                // 触发页面加载
+                Debug.Log(" 触发页面加载");
+                LoadNewScene();
+                //load = true;
             }
-            messageList.RefreshVirtualList();
+            catch (System.Exception)
+            {
+                // 接收字符串消息
+                string msg = Encoding.UTF8.GetString(data, 0, length);
+                message.Add(msg);
+                Debug.Log(msg);
+                if (message.Count > 50)
+                {
+                    message.RemoveRange(0, message.Count - 50);
+                }
+                messageList.RefreshVirtualList();
+            }
         }
 
     }
@@ -239,7 +282,8 @@ public class RoomWindow :Window {
     //房主发送房间失活udp消息，成员发送玩家变动tcp消息
     protected override void OnHide()
     {
-        MainUI.player.isHost = false;
+        Debug.Log("OnHide");
+        base.Dispose();
         if (MainUI.player.isHost)
         {
             MainUI.currentRoom.isAlive = false;
@@ -247,6 +291,8 @@ public class RoomWindow :Window {
         }
         else
         {
+            if (!SceneController.load)
+            {
             MainUI.currentRoom.currentPlayer.Remove(MainUI.player);
             using (MemoryStream ms = new MemoryStream())
             {
@@ -256,23 +302,42 @@ public class RoomWindow :Window {
                 System.Array.Copy(ms.GetBuffer(), 0, data, 0, ms.Length);
                 ChatRoom.SendMessage(data);
             }
+            }
         }
-        MainUI.currentRoom = null;
+        MainUI.player.isHost = false;
         if (roomDestroyDelegate!=null)
         {
             roomDestroyDelegate();
         }
         // 清空房间列表
         MainUI.rooms.Clear();
+        MainUI.currentRoom = null;
     }
 
-    //异步加载新场景
+    // 随机挑选主机，在房间内序列化传输主机IP
+    private void SelectHolder()
+    {
+        // 随机潜伏者
+        int random = new System.Random().Next(0, MainUI.currentRoom.currentPlayer.Count);
+        string ip = MainUI.currentRoom.currentPlayer[random].ip;
+        HolderInfo holderInfo = new HolderInfo();
+        holderInfo.ip = ip;
+        using (MemoryStream ms = new MemoryStream())
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(ms, holderInfo);
+            byte[] data = new byte[ms.Length];
+            System.Array.Copy(ms.GetBuffer(), 0, data, 0, ms.Length);
+            ChatRoom.SendMessage(data);
+        }
+    }
+
+    // 异步加载新场景
     private void LoadNewScene()
     {
-        //保存需要加载的目标场景
+        // 保存需要加载的目标场景
         Globe.nextSceneName = "Battle";
-        SceneManager.LoadScene("Loading");
-        Debug.Log("冲鸭！");
+        SceneController.load = true;
     }
 
 }

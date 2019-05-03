@@ -31,6 +31,8 @@ public class BattleUI : MonoBehaviour {
     private float initRightPercX = 0f;
     private float initLeftPercX = 0f;
 
+    public static SettlementWindow settlementWindow;
+
     // Use this for initialization
     void Start () {
         battleComponent = GetComponent<UIPanel>().ui;
@@ -79,6 +81,11 @@ public class BattleUI : MonoBehaviour {
         lastPercX = initRightPercX;
         compassList.scrollPane.SetPercX(initRightPercX, false);
 
+        // 测试
+        GTextField holderText = battleComponent.GetChild("holderTextField").asTextField;
+        holderText.text = "isHolder："+HolderInfoManager.holderInfo.isHolder.ToString()+" "+HolderInfoManager.holderInfo.ip;
+        GTextField playerText = battleComponent.GetChild("playerTextField").asTextField;
+        playerText.text = "player：" + IPv4.GetLocalIP();
     }
 
     // Update is called once per frame

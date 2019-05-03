@@ -64,8 +64,15 @@ public class TankHealth : MonoBehaviour
                 GameObject.Instantiate(tankExplotion, transform.position + Vector3.up, transform.rotation);
                 AudioSource.PlayClipAtPoint(explosionAudio, transform.position);
                 Destroy(this.gameObject);
-                // TODO GAME OVER
+
+                // 游戏结束，显示结算窗口
+                BattleUI.settlementWindow = new SettlementWindow();
+                BattleUI.settlementWindow.Show();
             }
+        }
+        if (hpProgressBar!=null)
+        {
+            OnChangeHealth((int)hp);
         }
     }
 
@@ -93,8 +100,8 @@ public class TankHealth : MonoBehaviour
     void OnChangeHealth(int hp)
     {
         //滑动条的值跟随hp变化
-        float value = hp / hpTotal;
-        hpProgressBar.value = value;
+        //float value = hp / hpTotal;
+        hpProgressBar.value = hp;
     }
 
     // 进出圈改变状态

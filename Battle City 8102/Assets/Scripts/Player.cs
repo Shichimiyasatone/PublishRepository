@@ -6,11 +6,21 @@ using System;
 public class Player  : IEquatable<Player>
 {
 
-    public string name;
-    public int rank;
+    public string name="";
+    public int rank=1;
     public bool isHost = false;
     public bool isReady = false;
-    public string ip;
+    public string ip="";
+
+    [NonSerialized]
+    public int money=0;
+    [NonSerialized]
+    public int experience = 0;
+
+    public Player()
+    {
+
+    }
 
     public Player(string name ,int rank)
     {
@@ -21,7 +31,7 @@ public class Player  : IEquatable<Player>
 
     public bool Equals(Player player)
     {
-        if (this.ip.Equals(player.ip))
+        if (ip==player.ip)
         {
             return true;
         }

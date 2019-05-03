@@ -29,7 +29,8 @@ public class TankListWindow : Window {
         //加入房间
         contentPane.GetChild("frame").asCom.GetChild("tickButton").onClick.Add(()=>{
             contentPane.Dispose();
-            new RoomWindow().Show();
+            MainUI.roomWindow = new RoomWindow();
+            MainUI.roomWindow.Show();
         });
     }
 

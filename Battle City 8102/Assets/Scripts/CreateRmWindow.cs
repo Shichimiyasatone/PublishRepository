@@ -33,8 +33,8 @@ public class CreateRmWindow : Window {
             MainUI.currentRoom = rm;
             RoomManager.CreateRoom(rm);
             // 显示房间窗口
-            RoomWindow rw = new RoomWindow();
-            rw.Show();
+            MainUI.roomWindow = new RoomWindow();
+            MainUI.roomWindow.Show();
             this.Dispose();
         });
 

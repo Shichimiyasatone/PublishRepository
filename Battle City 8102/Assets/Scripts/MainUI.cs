@@ -36,6 +36,7 @@ public class MainUI : MonoBehaviour {
 
     //选中房间
     public static Room currentRoom;
+    public static RoomWindow roomWindow;
 
     //经验条
     public GProgressBar experienceBar;
@@ -44,10 +45,6 @@ public class MainUI : MonoBehaviour {
     //房名滚动动效
     private GTweener tweener;
 
-
-    //测试经验条、金币
-    public int money = 100;
-    public int experience = 10;
     //测试房间信息
     public static List<Room> rooms = new List<Room>();
     //测试坦克总数
@@ -65,10 +62,9 @@ public class MainUI : MonoBehaviour {
         mainComponent.GetChild("configButton").asButton.displayObject.layer = 0;
         mainComponent.GetChildIndex(mainComponent.GetChild("configButton").asButton);
 
-        moneyTextField.text = money.ToString();
+        
         //设置经验
         experienceBar = mainComponent.GetChild("experienceBar").asProgress;
-        experienceBar.value = experience;
 
         //给按钮注册监听
         //设置按钮按下，显示设置窗口
@@ -141,8 +137,10 @@ public class MainUI : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        // 同步XML中的数据至UI
+        moneyTextField.text = player.money.ToString();
+        experienceBar.value = player.experience;
+    }
 
     //加载房间列表
     private void BattleButtonOnClick(GComponent targetComponent)

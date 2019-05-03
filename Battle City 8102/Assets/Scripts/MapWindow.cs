@@ -104,7 +104,6 @@ public class MapWindow : Window {
 
     private void FollowPlayer(Transform transform)
     {
-        Debug.Log(transform.Find("Main_Turre").transform.rotation.y);
         locationImage.rotation = 
             transform.Find("Main_Turre").transform.localEulerAngles.y
             +transform.localEulerAngles.y-45;

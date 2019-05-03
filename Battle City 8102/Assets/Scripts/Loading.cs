@@ -23,6 +23,7 @@ public class Loading : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Debug.Log("loading");
         loadingComponent = GetComponent<UIPanel>().ui;
         loadingBar = loadingComponent.GetChild("loadingBar").asProgress;
         //loadingButton = loadingComponent.GetChild("loadingButton").asButton;
@@ -30,7 +31,6 @@ public class Loading : MonoBehaviour
         //loadingButton.onClick.Add(() => { loadingBar.value += 10; });
 
         loadingBar.value = 0.0f;
-        Debug.Log(loadingBar.value);
 
         if (SceneManager.GetActiveScene().name == "Loading")
         {
@@ -44,7 +44,6 @@ public class Loading : MonoBehaviour
         operation = SceneManager.LoadSceneAsync(Globe.nextSceneName);
         //阻止当加载完成自动切换
         operation.allowSceneActivation = false;
-
         yield return operation;
     }
 
